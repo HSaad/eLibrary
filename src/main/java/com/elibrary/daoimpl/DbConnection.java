@@ -11,7 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class DbConnection {
-	private static final String JPA_UNIT_NAME = "DATABASE_URL";
+	private static final String JPA_UNIT_NAME = "ELibrary";
 	private static DbConnection connection = null;
 	private EntityManagerFactory emf;
 //	URI dbUri = null;
