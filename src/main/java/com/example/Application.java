@@ -35,7 +35,7 @@ public class Application {
 
     @RequestMapping("/createuserform")
     public String createUserForm(Model model) {
-        model.addAttribute("user", new User_JPA());
+        model.addAttribute("user", new User());
         return "createuser";
     }
 
@@ -56,7 +56,7 @@ public class Application {
                 String email = rs.getString("email");
                 String company = rs.getString("company");
                 String city = rs.getString("city");
-                users.add(new User_JPA(id,first, last, email, company, city));
+                users.add(new User(id,first, last, email, company, city));
             }
             model.addAttribute("users", users);
             return "user";
