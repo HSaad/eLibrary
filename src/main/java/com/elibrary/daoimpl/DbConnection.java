@@ -5,6 +5,9 @@ import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -47,9 +50,26 @@ public class DbConnection {
 	}
 	
 	private void init() {
-		if(emf == null || !emf.isOpen()) {
-			emf = Persistence.createEntityManagerFactory(JPA_UNIT_NAME);
-		}
+		
+		String databaseUrl = System.getenv("DATABASE_URL");
+		StringTokenizer st = new StringTokenizer(databaseUrl, ":@/");
+		String dbVendor = st.nextToken(); //if DATABASE_URL is set
+		String userName = st.nextToken();
+		String password = st.nextToken();
+		String host = st.nextToken();
+		String port = st.nextToken();
+		String databaseName = st.nextToken();
+		String jdbcUrl = String.format("jdbc:postgresql://%s:%s/%s?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", host, port, databaseName);
+		Map<String, String> properties = new HashMap<String, String>();
+		properties.put("javax.persistence.jdbc.url", databaseUrl );
+		properties.put("javax.persistence.jdbc.user", userName );
+		properties.put("javax.persistence.jdbc.password", password );
+		properties.put("javax.persistence.jdbc.driver", "org.postgresql.Driver");
+		properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+		emf = Persistence.createEntityManagerFactory("default", properties);
+//		if(emf == null || !emf.isOpen()) {
+//			emf = Persistence.createEntityManagerFactory(JPA_UNIT_NAME);
+//		}
 	}
 	
 	public static DbConnection getInstance() {
