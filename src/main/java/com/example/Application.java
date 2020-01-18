@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.elibrary.model.User_JPA;
+
 
 @Controller
 @SpringBootApplication
@@ -25,7 +27,7 @@ public class Application {
 
     @RequestMapping("/createuserform")
     public String createUserForm(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new User_JPA());
         return "createuser";
     }
 
@@ -46,7 +48,7 @@ public class Application {
                 String email = rs.getString("email");
                 String company = rs.getString("company");
                 String city = rs.getString("city");
-                users.add(new User(id,first, last, email, company, city));
+                users.add(new User_JPA(id,first, last, email, company, city));
             }
             model.addAttribute("users", users);
             return "user";
