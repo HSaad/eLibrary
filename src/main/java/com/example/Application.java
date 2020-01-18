@@ -41,42 +41,42 @@ public class Application {
         return "createuser";
     }
 
-    @RequestMapping("/users")
-    public String users(Model model) {
-        try {
-        	//int userID, String username, String password, String email, String firstName,
-			//String lastName
-        	List users = new ArrayList<>();
-            users = udao.readAll();
-            model.addAttribute("users", users);
-            return "user";
-        } catch (Exception e) {
-            return e.toString();
-        }
-    }
-
-    @RequestMapping(value="/createuser", method=RequestMethod.POST)
-    public String createUser(@ModelAttribute User user, Model model) {
-        model.addAttribute("user", user);
-        int id = user.getId();
-        String first = user.getFirst();
-        String last = user.getLast();
-        String email = user.getEmail();
-        String city = user.getCity();
-        String company = user.getCompany();
-        try {
-            Connection connection = getConnection();
-            Statement stmt = connection.createStatement();
-            String sql;
-            sql = "insert into cuser(first, last, email, company, city) values " +
-                    "('" + first  + "', '" + last + " ',' " + email +  "', ' " +
-                    company + "', '" + city + "');";
-            ResultSet rs = stmt.executeQuery(sql);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        return "result";
-    }
+//    @RequestMapping("/users")
+//    public String users(Model model) {
+//        try {
+//        	//int userID, String username, String password, String email, String firstName,
+//			//String lastName
+//        	List users = new ArrayList<>();
+//            users = udao.readAll();
+//            model.addAttribute("users", users);
+//            return "user";
+//        } catch (Exception e) {
+//            return e.toString();
+//        }
+//    }
+//
+//    @RequestMapping(value="/createuser", method=RequestMethod.POST)
+//    public String createUser(@ModelAttribute User user, Model model) {
+//        model.addAttribute("user", user);
+//        int id = user.getId();
+//        String first = user.getFirst();
+//        String last = user.getLast();
+//        String email = user.getEmail();
+//        String city = user.getCity();
+//        String company = user.getCompany();
+//        try {
+//            Connection connection = getConnection();
+//            Statement stmt = connection.createStatement();
+//            String sql;
+//            sql = "insert into cuser(first, last, email, company, city) values " +
+//                    "('" + first  + "', '" + last + " ',' " + email +  "', ' " +
+//                    company + "', '" + city + "');";
+//            ResultSet rs = stmt.executeQuery(sql);
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
+//        return "result";
+//    }
 
 
     private static Connection getConnection() throws URISyntaxException, SQLException {

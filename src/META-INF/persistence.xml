@@ -21,7 +21,7 @@
 	
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="DATABASE_URL" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.url" value="JDBC_DATABASE_URL" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="JDBC_DATABASE_USERNAME" /> <!-- DB User -->
             <property name="javax.persistence.jdbc.password" value="JDBC_DATABASE_PASSWORD" /> <!-- DB Password -->
 
