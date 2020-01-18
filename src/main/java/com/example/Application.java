@@ -13,20 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.elibrary.model.User_JPA;
-
-import com.elibrary.dao.LibraryItem_DAOI;
-import com.elibrary.dao.Loan_DAOI;
-import com.elibrary.dao.User_JPA_DAOI;
-import com.elibrary.daoimpl.Loan_DAO_Impl;
-import com.elibrary.daoimpl.User_JPA_DAO_Impl;
-
 
 @Controller
 @SpringBootApplication
 public class Application {
-	User_JPA_DAOI udao = new User_JPA_DAO_Impl();
-	Loan_DAOI ldao = new Loan_DAO_Impl();
 	
     @RequestMapping("/")
     public String home(Model model) {
