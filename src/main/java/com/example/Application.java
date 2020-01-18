@@ -15,11 +15,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.elibrary.model.User_JPA;
 
+import com.elibrary.dao.LibraryItem_DAOI;
+import com.elibrary.dao.Loan_DAOI;
+import com.elibrary.dao.User_JPA_DAOI;
+import com.elibrary.daoimpl.LibraryItem_DAO_Impl;
+import com.elibrary.daoimpl.Loan_DAO_Impl;
+import com.elibrary.daoimpl.User_JPA_DAO_Impl;
+
 
 @Controller
 @SpringBootApplication
 public class Application {
-
+	User_JPA_DAOI udao = new User_JPA_DAO_Impl();
+	Loan_DAOI ldao = new Loan_DAO_Impl();
+	LibraryItem_DAOI idao = new LibraryItem_DAO_Impl();	
+	
     @RequestMapping("/")
     public String home(Model model) {
         return "home";
@@ -34,22 +44,10 @@ public class Application {
     @RequestMapping("/users")
     public String users(Model model) {
         try {
-            Connection connection = getConnection();
-            Statement stmt = connection.createStatement();
-            String sql;
-            sql = "SELECT id, first, last, email, company, city FROM cuser";
-            ResultSet rs = stmt.executeQuery(sql);
-            StringBuffer sb = new StringBuffer();
-            List users = new ArrayList<>();
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String first = rs.getString("first");
-                String last = rs.getString("last");
-                String email = rs.getString("email");
-                String company = rs.getString("company");
-                String city = rs.getString("city");
-                users.add(new User_JPA(id,first, last, email, company, city));
-            }
+        	//int userID, String username, String password, String email, String firstName,
+			//String lastName
+        	List users = new ArrayList<>();
+            users = udao.readAll();
             model.addAttribute("users", users);
             return "user";
         } catch (Exception e) {
