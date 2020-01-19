@@ -18,7 +18,7 @@ import javax.persistence.Table;
 	//find All users
 	@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
 	//find user by id
-	@NamedQuery(name = "user.findByID", query = "SELECT u FROM User u WHERE u.id = :id"),
+	//@NamedQuery(name = "user.findByID", query = "SELECT u FROM User u WHERE u.id = :id"),
 	//find user by username
 	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
 	//find user by email

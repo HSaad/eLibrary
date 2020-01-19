@@ -14,7 +14,7 @@ public interface UserRepository extends CrudRepository<User, Long>{
 	
 	List<User> findAllOrderedDescending();
 	List<User> findAll();
-	User findByID(Long id);
+	//User findByID(Long id);
 	User findByUsername(String username);
 	User findByEmail(String email);		
 //	List<User_JPA> readAllAdmins();

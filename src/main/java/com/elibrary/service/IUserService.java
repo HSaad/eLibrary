@@ -7,7 +7,7 @@ import com.elibrary.model.*;
 public interface IUserService {
 	List<User> findAllOrderedDescending();
 	List<User> findAll();
-	User findByID(Long id);
+	//User findByID(Long id);
 	User findByUsername(String username);
 	User findByEmail(String email);	
 	User create(User user);
