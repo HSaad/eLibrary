@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="cuser")
 @NamedQueries({
+	//find All users
+	@NamedQuery(name = "User.findAll", query = "SELECT u FROM User"),
 	//find user by username
 	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
 	//find user by email
