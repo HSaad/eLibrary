@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="cuser")
 @NamedQueries({
-	@NamedQuery(name = "User.findAllOrderedDescending", query = "SELECT u FROM User u ORDER BY u.name DESC"),
+	@NamedQuery(name = "User.findAllOrderedDescending", query = "SELECT u FROM User u ORDER BY u.first DESC"),
 	//find All users
 	@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
 	//find user by username
