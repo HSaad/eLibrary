@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="cuser")
-@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
+@NamedQuery(name = "User.findAllOrderDescending", query = "SELECT u FROM User u ORDER BY u.first DESC")
 public class User {
 	
 	@Id
