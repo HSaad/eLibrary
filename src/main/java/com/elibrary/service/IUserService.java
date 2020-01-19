@@ -6,7 +6,7 @@ import com.elibrary.model.*;
 
 public interface IUserService {
 	List<User> findAllOrderedDescending();
-	List<User> readAll();
+	List<User> findAll();
 	User readByUsername(String username);
 	User readByEmail(String email);		
 	List<User> readAllAdmins();
