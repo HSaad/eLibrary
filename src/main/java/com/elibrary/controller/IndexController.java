@@ -34,7 +34,7 @@ public class IndexController {
     
     @RequestMapping("/users")
     public String findAllOrderedByNameDescending(Model model) {
-    	List<User> users = (List<User>) userService.findAllOrderedDescending();
+    	List<User> users = (List<User>) userService.findAll();
     	model.addAttribute("users", users);
     	return "user";
     }
