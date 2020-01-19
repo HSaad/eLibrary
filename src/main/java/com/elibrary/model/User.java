@@ -18,9 +18,9 @@ import javax.persistence.Table;
 	//find All users
 	@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
 	//find user by username
-	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
+	//@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
 	//find user by email
-	@NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
+	//@NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
 	//find all admins
 	//@NamedQuery(name = "User.findAllAdmins", query = "SELECT u from User u WHERE TYPE(u) = Admin"),
 	//find all borrowers
@@ -41,11 +41,11 @@ public class User {
     private String city;
     private String company;
 
-	private String username; 
-	private String password;
+//	private String username; 
+//	private String password;
 	private String email;
-	private String firstName;
-	private String lastName;
+//	private String firstName;
+//	private String lastName;
     
     public User() {}
 
@@ -59,14 +59,14 @@ public class User {
     }
     
 
-	public User(String username, String password, String email, String firstName, String lastName) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
+//	public User(String username, String password, String email, String firstName, String lastName) {
+//		super();
+//		this.username = username;
+//		this.password = password;
+//		this.email = email;
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//	}
 	
 
     public Long getId() {
@@ -116,36 +116,36 @@ public class User {
     public void setCompany(String company) {
         this.company = company;
     }
-    
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+//    
+//	public String getUsername() {
+//		return username;
+//	}
+//
+//	public void setUsername(String username) {
+//		this.username = username;
+//	}
+//
+//	public String getPassword() {
+//		return password;
+//	}
+//
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
+//
+//	public String getFirstName() {
+//		return firstName;
+//	}
+//
+//	public void setFirstName(String firstName) {
+//		this.firstName = firstName;
+//	}
+//
+//	public String getLastName() {
+//		return lastName;
+//	}
+//
+//	public void setLastName(String lastName) {
+//		this.lastName = lastName;
+//	}
 }
