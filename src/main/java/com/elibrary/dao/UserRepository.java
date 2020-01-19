@@ -12,9 +12,8 @@ import com.elibrary.model.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long>{
 
-	List<User> findAllOrderedByNameDescending();
-//	User readByUsername(String username);
-//	User_JPA readByEmail(String email);		
+	User readByUsername(String username);
+	User readByEmail(String email);		
 //	List<User_JPA> readAllAdmins();
 //	List<User_JPA> readAllBorrowers();
 //	List<User_JPA> readAllLibrarians();
