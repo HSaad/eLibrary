@@ -30,10 +30,10 @@ public class Application extends SpringBootServletInitializer{
         return "hello";
     }
     
-    @RequestMapping("/signup")
-    public String signup(Model model) {
-        return "signup";
-    }
+//    @RequestMapping("/signup")
+//    public String signup(Model model) {
+//        return "signup";
+//    }
 
 //    @RequestMapping("/createuserform")
 //    public String createUserForm(Model model) {
