@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.elibrary.dao.UserRepository;
-import com.example.User;
+import com.elibrary.model.User;
 
 @Service
 public class UserService implements IUserService{

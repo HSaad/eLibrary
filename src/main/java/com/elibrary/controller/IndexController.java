@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.elibrary.model.User;
 import com.elibrary.service.IUserService;
-import com.example.User;
 
 @Controller
 public class IndexController {
