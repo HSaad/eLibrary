@@ -24,7 +24,7 @@ public class UserService implements IUserService{
 	@Override
 	public List<User> readAll() {
 		// TODO Auto-generated method stub
-		List<User> users = (List<User>) repository.findAll();
+		List<User> users = (List<User>) repository.readAll();
 		return users;
 	}
 
