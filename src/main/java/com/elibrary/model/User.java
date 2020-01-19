@@ -18,11 +18,11 @@ import javax.persistence.Table;
 	//find All users
 	@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
 	//find user by id
-	//@NamedQuery(name = "user.findByID", query = "SELECT u FROM User u WHERE u.id = :id"),
+	@NamedQuery(name = "user.findByID", query = "SELECT u FROM User u WHERE u.id = :id"),
 	//find user by username
-	//@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
+	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
 	//find user by email
-	//@NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
+	@NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
 	//find all admins
 	//@NamedQuery(name = "User.findAllAdmins", query = "SELECT u from User u WHERE TYPE(u) = Admin"),
 	//find all borrowers

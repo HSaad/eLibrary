@@ -23,51 +23,37 @@ public class UserService implements IUserService{
 	
 	@Override
 	public List<User> findAll() {
-		// TODO Auto-generated method stub
 		List<User> users = (List<User>) repository.findAll();
 		return users;
 	}
-//
-//	@Override
-//	public User readByUsername(String username) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public User readByEmail(String email) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<User> readAllAdmins() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<User> readAllBorrowers() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<User> readAllLibrarians() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<User> readByType(Class type) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
+	
 	@Override
 	public List<User> findAllOrderedDescending() {
-		// TODO Auto-generated method stub
 		List<User> users = (List<User>) repository.findAllOrderedDescending();
 		return users;
+	}
+
+	@Override
+	public User findByID(Long id) {
+		User user = (User) repository.findByID(id);
+		return user;
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		User user = (User) repository.findByUsername(username);
+		return user;
+	}
+
+	@Override
+	public User findByEmail(String email) {
+		User user = (User) repository.findByEmail(email);
+		return user;
+	}
+	
+	//Creates new user 
+	public User create(User user) {
+		repository.save(user);
+		return user;
 	}
 }
