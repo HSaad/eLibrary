@@ -17,4 +17,5 @@ public interface IUserService {
 //	List<User> readAllBorrowers();
 //	List<User> readAllLibrarians();
 //	List<User> readByType(Class type);
+	User findByID(Long id);
 }

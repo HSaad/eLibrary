@@ -33,11 +33,11 @@ public class UserService implements IUserService{
 		return users;
 	}
 
-//	@Override
-//	public User findByID(Long id) {
-//		User user = (User) repository.findByID(id);
-//		return user;
-//	}
+	@Override
+	public User findByID(Long id) {
+		User user = (User) repository.findOne(id);
+		return user;
+	}
 
 	@Override
 	public User findByUsername(String username) {
