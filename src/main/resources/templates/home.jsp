@@ -13,8 +13,8 @@
 <div class="container">
 <h2> Heroku Spring Boot PostgreSQLDemo : </h2>
 
-<p class="style1"> Get List of Users : <a href="/users">Link</a></p>
-    <p class="style1"> Create a User : <a href="/createuserform">Link</a></p>
+<!--<p class="style1"> Get List of Users : <a href="/users">Link</a></p>
+    <p class="style1"> Create a User : <a href="/createuserform">Link</a></p> -->
 </div>
 </body>
 </html>

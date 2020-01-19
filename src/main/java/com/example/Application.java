@@ -20,7 +20,7 @@ public class Application {
 	
     @RequestMapping("/")
     public String home(Model model) {
-        return "home";
+        return "hello";
     }
     
     @RequestMapping("/signup")
