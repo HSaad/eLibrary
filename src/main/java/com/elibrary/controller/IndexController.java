@@ -32,7 +32,7 @@ public class IndexController {
         return "home";
     }
     
-    @RequestMapping("/showusers")
+    @RequestMapping("/users")
     public String findAllOrderedByNameDescending(Model model) {
     	List<User> users = (List<User>) userService.findAllOrderedDescending();
     	model.addAttribute("users", users);
