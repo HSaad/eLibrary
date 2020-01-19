@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer{
-	
+	 
 	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Application.class);
-	}
-
+	  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	    return application.sources(Application.class);
+	  }
+	
     @RequestMapping("/")
     public String home(Model model) {
         return "hello";
