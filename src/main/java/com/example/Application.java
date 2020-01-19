@@ -2,6 +2,8 @@ package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.stereotype.*;
 
 import java.sql.*;
@@ -16,8 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @SpringBootApplication
-public class Application {
+public class Application extends SpringBootServletInitializer{
 	
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(Application.class);
+	}
+
     @RequestMapping("/")
     public String home(Model model) {
         return "hello";
