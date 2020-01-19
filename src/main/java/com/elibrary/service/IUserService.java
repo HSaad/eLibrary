@@ -5,6 +5,7 @@ import java.util.List;
 import com.elibrary.model.*;
 
 public interface IUserService {
+	List<User> findAllOrderedDescending();
 	List<User> readAll();
 	User readByUsername(String username);
 	User readByEmail(String email);		

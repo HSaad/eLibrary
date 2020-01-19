@@ -12,6 +12,7 @@ import com.elibrary.model.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long>{
 	
+	List<User> findAllOrderedDescending();
 	List<User> readAll();
 	User readByUsername(String username);
 	User readByEmail(String email);		

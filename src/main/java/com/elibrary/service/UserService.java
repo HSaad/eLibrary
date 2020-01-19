@@ -63,4 +63,11 @@ public class UserService implements IUserService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<User> findAllOrderedDescending() {
+		// TODO Auto-generated method stub
+		List<User> users = (List<User>) repository.findAllOrderedDescending();
+		return users;
+	}
 }
