@@ -25,7 +25,7 @@ public class Application {
     
     @RequestMapping("/signup")
     public String signup(Model model) {
-        return "signup";
+        return "signup.jsp";
     }
 
     @RequestMapping("/createuserform")
