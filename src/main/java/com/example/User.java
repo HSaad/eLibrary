@@ -1,11 +1,23 @@
 package com.example;
 
-/**
- * Created by Rajdeep Dua on 14/3/16.
- */
+import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="cuser")
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
 public class User {
-    private int id;
-    private String first;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+	private String first;
     private String last;
     private String email;
     private String city;
@@ -13,7 +25,7 @@ public class User {
 
     public User() {}
 
-    public User(int id, String first, String last, String email, String city, String company) {
+    public User(Long id, String first, String last, String email, String city, String company) {
         this.id = id;
         this.first = first;
         this.last = last;
@@ -22,11 +34,11 @@ public class User {
         this.company = company;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

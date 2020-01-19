@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS cuser
 (
-     id SERIAL PRIMARY KEY NOT NULL,
+     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
      first varchar(100),
      last varchar (100),
      email varchar (100),

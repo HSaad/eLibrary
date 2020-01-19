@@ -45,7 +45,7 @@ public class IndexController {
             StringBuffer sb = new StringBuffer();
             List users = new ArrayList<>();
             while (rs.next()) {
-                int id = rs.getInt("id");
+                Long id = (long) rs.getInt("id");
                 String first = rs.getString("first");
                 String last = rs.getString("last");
                 String email = rs.getString("email");
@@ -63,7 +63,7 @@ public class IndexController {
     @RequestMapping(value="/createuser", method=RequestMethod.POST)
     public String createUser(@ModelAttribute User user, Model model) {
         model.addAttribute("user", user);
-        int id = user.getId();
+        Long id = user.getId();
         String first = user.getFirst();
         String last = user.getLast();
         String email = user.getEmail();
