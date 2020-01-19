@@ -1,2 +1,2 @@
-INSERT INTO cuser(first, last, email, company, city) VALUES('John', 'Smith', 'john.smith@gmail.com', 'John Inc', 'Toronto');
-INSERT INTO cuser(first, last, email, company, city) VALUES('Jane', 'Smith', 'jane.smith@gmail.com', 'Jane Inc', 'Toronto');
+INSERT INTO cuser(firstName, lastName, email, username, pw) VALUES('John', 'Smith', 'john.smith@gmail.com', 'jsmith', '123');
+INSERT INTO cuser(first, last, email, company, city) VALUES('Jane', 'Smith', 'jane.smith@gmail.com', 'janesmith', '1234');
