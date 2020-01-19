@@ -22,7 +22,7 @@ public class UserService implements IUserService{
 	private UserRepository repository;
 	
 	@Override
-	public List<User> finaAllOrderedByNameDescending() {
+	public List<User> findAllOrderedByNameDescending() {
 		// TODO Auto-generated method stub
 		List<User> users = (List<User>) repository.findAllOrderedByNameDescending();
 		return users;
