@@ -22,6 +22,11 @@ public class Application {
     public String home(Model model) {
         return "home";
     }
+    
+    @RequestMapping("/signup")
+    public String signup(Model model) {
+        return "signup";
+    }
 
     @RequestMapping("/createuserform")
     public String createUserForm(Model model) {
