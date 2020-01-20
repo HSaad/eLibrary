@@ -30,5 +30,7 @@ CREATE TABLE IF NOT EXISTS libitem
      publisher varchar(50),
      narrator varchar (100),
      author varchar(100),
-     format varchar(100)
+     format varchar(100),
+     frequency varchar(100),
+     edition varchar(100)
 );
