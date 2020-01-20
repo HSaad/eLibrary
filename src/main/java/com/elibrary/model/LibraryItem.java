@@ -26,7 +26,7 @@ import javax.persistence.Table;
 	//find all library items by author/creator
 	@NamedQuery(name = "Library.findByCreator", query = "SELECT i FROM LibraryItem i WHERE i.creator = :creator"),
 	//find all library items that are available (true)
-	//@NamedQuery(name = "Library.findAllAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = 1"),
+	@NamedQuery(name = "Library.findAllAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available")
 	
 	//find all ebooks
 	//@NamedQuery(name = "library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),

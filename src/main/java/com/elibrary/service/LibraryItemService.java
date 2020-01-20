@@ -32,11 +32,11 @@ public class LibraryItemService implements ILibraryItemService{
 		return items;
 	}
 
-//	@Override
-//	public List<LibraryItem> findAllAvailable() {
-//		List<LibraryItem> items = (List<LibraryItem>) repository.findAllAvailable();
-//		return items;
-//	}
+	@Override
+	public List<LibraryItem> findAllAvailable() {
+		List<LibraryItem> items = (List<LibraryItem>) repository.findAllAvailable();
+		return items;
+	}
 
 	@Override
 	public LibraryItem findByID(Long id) {
