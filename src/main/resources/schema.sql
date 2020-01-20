@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS cuser
 CREATE TABLE IF NOT EXISTS libitem
 (
      id SERIAL PRIMARY KEY NOT NULL,
-     item_type varchar(20),
+     library_item_type varchar(20),
      title varchar(100),
      creator varchar (100),
      description varchar (150),

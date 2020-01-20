@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="libitem")
-@DiscriminatorColumn(name = "item_type", length=20)
+@DiscriminatorColumn(name = "library_item_type", length=20)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NamedQueries({
 	//find library item by title
