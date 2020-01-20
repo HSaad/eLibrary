@@ -24,5 +24,11 @@ CREATE TABLE IF NOT EXISTS libitem
      genre varchar(100),
      publication_year int,
      img_src varchar(150),
-     available boolean
+     available boolean,
+     file_size int,
+     duration varchar(50),
+     publisher varchar(50),
+     narrator varchar (100),
+     author varchar(100),
+     format varchar(100)
 );
