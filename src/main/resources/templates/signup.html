@@ -1,33 +1,34 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Heroku Spring Boot Demo</title>
+    <title>Sign Up for an E-Library Account</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../assets/css/bootstrap.css" th:href="@{/assets/css/bootstrap.css}" />
     <link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />
 </head>
 <body>
 <!--<div style="margin-top: 20px;margin-left: 50px">-->
-<div class="container">
-<h3> Users : </h3>
-    <form action="#" th:action="@{/createuser}" th:object="${user}" method="post">>
-        <table border="0">
-            <tr>
-                <td colspan="2" align="center"><h2>Spring MVC Form Demo - Registration</h2></td>
-            </tr>
-            <tr>
-                <td>First Name:</td>
-                <td><input id="firstName" type="text" th:field="*{firstName}"/></td>
-            </tr>
-            <tr>
-                <td>Last Name:</td>
-                <td><input id="lastName" type="text" th:field="*{lastName}"/></td>
-            </tr>
-
-            <tr><td><input type="submit" name="Submit"/></td></tr>
-
-        </table>
-    </form>
-</div>
+	<section class="signup-section">
+			<h2>Sign Up</h2>
+			
+			<form action="#" th:action="@{/createuser}" th:object="${user}" method="post">
+				<h3>Enter your details: </h3>
+				<input placeholder=" First Name " type="text" name="firstname" id="firstname" th:field="*{firstName}">
+				<input placeholder=" Last Name " type="text" name="lastname" id="lastname" th:field="*{lastName}">
+				<input placeholder=" Email address " type="text" name="email" id="email" th:field="*{emailName}">
+				<input placeholder=" Username " type="text" name="username" id="username" th:field="*{username}">
+				
+				<h3>Set a password: </h3>
+				<p> Your password must be at least 8 characters.</p>
+				<input placeholder=" Password " type="password" name="pw" id="pw" th:field="*{password}">
+				<input placeholder=" Password again " type="password" name="pw1" id="pw1">
+				
+				<p> By clicking "Sign up," you confirm that you're 13 or older and agree to <br>
+				E-Library's Privacy Policy and Terms and Conditions </p>
+				
+				
+				<input class="signup" type="submit" value="Sign Up">
+			</form>
+		</section>
 </body>
 </html>
