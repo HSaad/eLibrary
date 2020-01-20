@@ -3,16 +3,21 @@ package com.elibrary.model;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="cuser")
+@DiscriminatorColumn(name = "user_type", length=20)//discriminatorType = DiscriminatorType.STRING, length = 20)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NamedQueries({
 	@NamedQuery(name = "User.findAllOrderedDescending", query = "SELECT u FROM User u ORDER BY u.firstName DESC"),
 	//find All users
