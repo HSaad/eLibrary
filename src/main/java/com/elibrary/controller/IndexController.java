@@ -68,7 +68,7 @@ public class IndexController {
     public String createItem(@ModelAttribute LibraryItem item, Model model) {
         model.addAttribute("item", item);
         itemService.create(item);
-        return "item";
+        return "home";
     }
 
     @RequestMapping("/items")
