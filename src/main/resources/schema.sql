@@ -5,5 +5,6 @@ CREATE TABLE IF NOT EXISTS cuser
      last_name varchar (100),
      email varchar (100),
      username varchar (150),
-     pw varchar(100)
+     pw varchar(100),
+     privilege varchar(100)
 );
