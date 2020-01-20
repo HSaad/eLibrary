@@ -18,4 +18,5 @@ public interface LibraryItemRepository extends CrudRepository<LibraryItem, Long>
 	List<LibraryItem> findAllMagazines();
 	List<LibraryItem> findAllAudioBooks();
 	List<LibraryItem> findAllVideos();
+	List<LibraryItem> findAllEbooks();
 }

@@ -74,4 +74,10 @@ public class LibraryItemService implements ILibraryItemService{
 		return items;
 	}
 
+	@Override
+	public List<LibraryItem> findAllEbooks() {
+		List<LibraryItem> items = (List<LibraryItem>) repository.findAllEbooks();
+		return items;
+	}
+
 }

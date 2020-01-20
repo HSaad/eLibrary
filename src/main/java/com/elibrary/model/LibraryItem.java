@@ -31,12 +31,12 @@ import javax.persistence.Table;
 	@NamedQuery(name = "LibraryItem.findAllAudioBooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = AudioBook"),
 	//find all magazines
 	@NamedQuery(name = "LibraryItem.findAllMagazines", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Magazine"),
-//	//find all ebooks
-//		@NamedQuery(name = "library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
-//		//find all videos
-		@NamedQuery(name = "LibraryItem.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
-//		//Find library items by type
-//		@NamedQuery(name = "library.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type"),
+	//find all ebooks
+	@NamedQuery(name = "LibraryItem.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
+	//find all videos
+	@NamedQuery(name = "LibraryItem.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
+	//Find library items by type
+	@NamedQuery(name = "LibraryItem.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type")
 
 })
 public class LibraryItem{

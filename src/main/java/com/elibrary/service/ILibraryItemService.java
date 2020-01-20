@@ -16,4 +16,5 @@ public interface ILibraryItemService {
 	List<LibraryItem> findAllMagazines();
 	List<LibraryItem> findAllAudioBooks();
 	List<LibraryItem> findAllVideos();
+	List<LibraryItem> findAllEbooks();
 }
