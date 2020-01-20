@@ -13,5 +13,5 @@ public interface LibraryItemRepository extends CrudRepository<LibraryItem, Long>
 	List<LibraryItem> findAll();
 	List<LibraryItem> findByTitle(String title);
 	List<LibraryItem> findByCreator(String creator);		
-	List<LibraryItem> findAllAvailable();
+//	List<LibraryItem> findAllAvailable();
 }
