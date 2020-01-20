@@ -28,7 +28,7 @@ import javax.persistence.Table;
 	//find all library items that are available (true)
 	@NamedQuery(name = "Library.findByAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = :available"),
 //	//find all ebooks
-	@NamedQuery(name = "Library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
+	@NamedQuery(name = "Library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook")
 //	//find all audiobooks
 //	@NamedQuery(name = "Library.findAllAudioBooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = AudioBook"),
 //	//find all magazines
