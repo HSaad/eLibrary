@@ -43,7 +43,7 @@ public class IndexController {
     @RequestMapping("/createuserform")
     public String createUserForm(Model model) {
         model.addAttribute("user", new User());
-        return "signup";
+        return "createuser";
     }
 
     @RequestMapping(value="/createuser", method=RequestMethod.POST)
