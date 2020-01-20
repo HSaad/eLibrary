@@ -80,4 +80,10 @@ public class LibraryItemService implements ILibraryItemService{
 		return items;
 	}
 
+	@Override
+	public List<LibraryItem> findByType(Class type) {
+		List<LibraryItem> items = (List<LibraryItem>) repository.findByType(type);
+		return items;
+	}
+
 }

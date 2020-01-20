@@ -17,4 +17,5 @@ public interface ILibraryItemService {
 	List<LibraryItem> findAllAudioBooks();
 	List<LibraryItem> findAllVideos();
 	List<LibraryItem> findAllEbooks();
+	List<LibraryItem> findByType(Class type);
 }
