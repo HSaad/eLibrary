@@ -16,4 +16,5 @@ public interface LibraryItemRepository extends CrudRepository<LibraryItem, Long>
 	List<LibraryItem> findByCreator(String creator);		
 	List<LibraryItem> findByAvailable(boolean available);
 	List<LibraryItem> findAllMagazines();
+	List<LibraryItem> findAllAudioBooks();
 }

@@ -27,9 +27,17 @@ import javax.persistence.Table;
 	@NamedQuery(name = "LibraryItem.findByCreator", query = "SELECT i FROM LibraryItem i WHERE i.creator = :creator"),
 	//find all library items that are available (true)
 	@NamedQuery(name = "LibraryItem.findByAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = :available"),
-	//find all ebooks
+	//find all audiobooks
+	@NamedQuery(name = "LibraryItem.findAllAudioBooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = AudioBook"),
+	//find all magazines
 	@NamedQuery(name = "LibraryItem.findAllMagazines", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Magazine"),
-		
+//	//find all ebooks
+//		@NamedQuery(name = "library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
+//		//find all videos
+//		@NamedQuery(name = "library.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
+//		//Find library items by type
+//		@NamedQuery(name = "library.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type"),
+
 })
 public class LibraryItem{
 	@Id
