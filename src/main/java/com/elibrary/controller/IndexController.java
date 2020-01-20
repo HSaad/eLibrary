@@ -50,6 +50,12 @@ public class IndexController {
         model.addAttribute("user", new User());
         return "signup";
     }
+    
+    @RequestMapping("/createitemform")
+    public String createItemForm(Model model) {
+        model.addAttribute("item", new LibraryItem());
+        return "createitem";
+    }
 
     @RequestMapping(value="/createuser", method=RequestMethod.POST)
     public String createUser(@ModelAttribute User user, Model model) {
@@ -57,7 +63,14 @@ public class IndexController {
         userService.create(user);
         return "result";
     }
-    
+   
+    @RequestMapping(value="/createitem", method=RequestMethod.POST)
+    public String createItem(@ModelAttribute LibraryItem item, Model model) {
+        model.addAttribute("item", item);
+        itemService.create(item);
+        return "item";
+    }
+
     @RequestMapping("/items")
     public String findAllItems(Model model) {
     	List<LibraryItem> items = (List<LibraryItem>) itemService.findAll();
