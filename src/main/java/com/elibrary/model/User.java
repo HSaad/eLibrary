@@ -33,7 +33,7 @@ import javax.persistence.Table;
 	//find all librarians
 	@NamedQuery(name = "User.findAllLibrarians", query = "SELECT u from User u WHERE TYPE(u) = Librarian"),
 	//Find users by type
-	@NamedQuery(name = "User.findByType", query = "SELECT u from User u WHERE TYPE(u) = :type"),
+	@NamedQuery(name = "User.findByType", query = "SELECT u from User u WHERE TYPE(u) = :type")
 })
 public class User {
 	

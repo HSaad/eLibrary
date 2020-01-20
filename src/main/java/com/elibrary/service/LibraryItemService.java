@@ -56,34 +56,4 @@ public class LibraryItemService implements ILibraryItemService{
 		return items;
 	}
 
-//	@Override
-//	public List<LibraryItem> findAllEbooks() {
-//		List<LibraryItem> items = (List<LibraryItem>) repository.findAllEbooks();
-//		return items;
-//	}
-//
-//	@Override
-//	public List<LibraryItem> findAllAudioBooks() {
-//		List<LibraryItem> items = (List<LibraryItem>) repository.findAllAudioBooks();
-//		return items;
-//	}
-//
-//	@Override
-//	public List<LibraryItem> findAllMagazines() {
-//		List<LibraryItem> items = (List<LibraryItem>) repository.findAllMagazines();
-//		return items;
-//	}
-//
-//	@Override
-//	public List<LibraryItem> findAllVideos() {
-//		List<LibraryItem> items = (List<LibraryItem>) repository.findAllVideos();
-//		return items;
-//	}
-
-//	@Override
-//	public List<LibraryItem> findByType(Class type) {
-//		List<LibraryItem> items = (List<LibraryItem>) repository.findByType(type);
-//		return items;
-//	}
-
 }
