@@ -49,10 +49,6 @@ public class IndexController {
     @RequestMapping(value="/createuser", method=RequestMethod.POST)
     public String createUser(@ModelAttribute User user, Model model) {
         model.addAttribute("user", user);
-        Long id = user.getId();
-        String first = user.getFirstName();
-        String last = user.getLastName();
-        String email = user.getEmail();
         userService.create(user);
         return "result";
     }
