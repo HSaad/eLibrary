@@ -42,8 +42,7 @@ public class IndexController {
 
     @RequestMapping("/createuserform")
     public String createUserForm(Model model) {
-    	User u = new User();
-        model.addAttribute("user", u);
+        model.addAttribute("user", new User());
         return "signup";
     }
 
