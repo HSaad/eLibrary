@@ -13,5 +13,5 @@ public interface ILibraryItemService {
 	List<LibraryItem> findAllAvailable();
 	LibraryItem findByID(Long id);
 	LibraryItem create(LibraryItem item);	
-
+	List<LibraryItem> findAllMagazines();
 }

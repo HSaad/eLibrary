@@ -56,4 +56,10 @@ public class LibraryItemService implements ILibraryItemService{
 		return items;
 	}
 
+	@Override
+	public List<LibraryItem> findAllMagazines() {
+		List<LibraryItem> items = (List<LibraryItem>) repository.findAllMagazines();
+		return items;
+	}
+
 }

@@ -22,11 +22,14 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NamedQueries({
 	//find library item by title
-	@NamedQuery(name = "Library.findByTitle", query = "SELECT i FROM LibraryItem i WHERE UPPER(i.title) LIKE CONCAT('%',UPPER(:title),'%') "),
+	@NamedQuery(name = "LibraryItem.findByTitle", query = "SELECT i FROM LibraryItem i WHERE UPPER(i.title) LIKE CONCAT('%',UPPER(:title),'%') "),
 	//find all library items by author/creator
-	@NamedQuery(name = "Library.findByCreator", query = "SELECT i FROM LibraryItem i WHERE i.creator = :creator"),
+	@NamedQuery(name = "LibraryItem.findByCreator", query = "SELECT i FROM LibraryItem i WHERE i.creator = :creator"),
 	//find all library items that are available (true)
-	@NamedQuery(name = "Library.findByAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = :available"),
+	@NamedQuery(name = "LibraryItem.findByAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = :available"),
+	//find all ebooks
+	@NamedQuery(name = "LibraryItem.findAllMagazines", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Magazine"),
+		
 })
 public class LibraryItem{
 	@Id
