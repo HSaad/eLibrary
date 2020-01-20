@@ -26,18 +26,18 @@ import javax.persistence.Table;
 	//find all library items by author/creator
 	@NamedQuery(name = "Library.findByCreator", query = "SELECT i FROM LibraryItem i WHERE i.creator = :creator"),
 	//find all library items that are available (true)
-	@NamedQuery(name = "Library.findByAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = :available")
+	@NamedQuery(name = "Library.findByAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = :available"),
 	
 	//find all ebooks
-	//@NamedQuery(name = "library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
+	@NamedQuery(name = "Library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
 	//find all audiobooks
-	//@NamedQuery(name = "library.findAllAudioBooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = AudioBook"),
+	@NamedQuery(name = "Library.findAllAudioBooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = AudioBook"),
 	//find all magazines
-	//@NamedQuery(name = "library.findAllMagazines", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Magazine"),
+	@NamedQuery(name = "Library.findAllMagazines", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Magazine"),
 	//find all videos
-	//@NamedQuery(name = "library.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
+	@NamedQuery(name = "Library.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
 	//Find library items by type
-	//@NamedQuery(name = "library.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type"),
+	@NamedQuery(name = "Library.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type")
 })
 public class LibraryItem{
 	
