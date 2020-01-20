@@ -1,44 +1,521 @@
-.center
-{
-	text-align: center !important;
+/* Add CSS Reset later */
+
+* {
+	margin: 0;
 }
 
-.middle
-{
-	vertilca-align: middle !important;
-}
-
-.inputLabel
-{
-	width: 100px;
-	text-align: right;
-	padding-right: 20px;
-	font-weight: bold !important;
-}
-
-.right
-{
-	text-align: right !important;
-}
-
-.left
-{
-	text-align: left !important;
-}
-
-#footerText
-{
+body {
+	margin-top: 0;
+	margin-botton: 0;
+	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
-	position: fixed;  
-	bottom: 0;
-}
-div.container {
-    border: 1px grey;
-    padding: 10px;
-    margin: 20px;
 }
 
-p.style1 {
-    font-size: 16px;
-    padding: 10px;
+nav {
+	position: fixed;
+	padding-top: 25px;
+	width: 100%;
+	padding-bottom: 20px;
+	background-color: white;
+	border-bottom: 1px #D9D9D9 solid;
+}
+
+#search {
+	margin-left: 150px;
+	padding-left: 15px;
+	width: 40%;
+	height: 20px;
+	
+	border-radius: 5px;
+	border: 1px #D9D9D9 solid;
+}
+
+/* Add Search button later */
+.search-icon {
+	border: none;
+	background: url("search-icon.png") center no-repeat;
+	opacity: 0.5;
+	border-radius: 5px;
+	position: absolute;
+	margin-left: 5px;
+	height: 25px;
+	width: 25px;
+}
+
+.search-icon:hover {
+	
+	opacity: 1.0;
+}
+
+a, button, .book input  {
+	border: none;
+	border-radius: 3px;
+	background: #D55B77;
+	color: white;
+	padding: 8px 18px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+	border: none;
+	background: white;
+	color: black;
+	padding: 0;
+	margin-left: 100px;
+	float: left;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.logo:hover {
+	opacity: 0.5;
+}
+
+.profile {
+	border: none;
+	background: white;
+	color: black;
+	padding: 0;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.profile:hover {
+	color: #D55B77;
+}
+
+.sign-in {
+	float: right;
+	margin-right: 70px;
+}
+
+.sign-up {
+	margin-right: 8px;
+	float: right;
+}
+
+section {
+	padding-top: 75px;
+	
+	text-align: center;
+	
+	min-width: 100%;
+	min-height: 100%;
+	
+	height: 2080px;
+	width: 100%;
+}
+
+.landing {
+	margin: 0;
+	background-image: url(landing-page.jpg); /* change image later*/
+	
+	background-position:center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 90vh;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	padding: 20px;
+}
+
+.landing-buttons {
+	margin-right: 10px;
+	padding: 10px 20px;
+	font-size: 16px;
+}
+
+p {
+	margin: 20px;
+	padding-bottom: 20px;
+	font-size: 20px;
+}
+
+h1{
+	font-size: 4em;
+	margin-top: 150px;
+}
+
+h2{
+	font-size: 20px;
+	margin-top: 50px;
+	margin-bottom: 35px;
+	color: #292929;
+}
+
+.transition{
+	background:#D55B77;
+	height: 10px;
+	width: 100%;
+	box-shadow: 8px 3px 3px #7B7B7B;
+}
+
+
+.booklist {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 20px;
+}
+
+.browse {
+	margin-left: 8px;
+}
+
+.book {
+	display: inline-block;
+	margin-right: 50px;
+	margin-bottom: 30px;
+}
+
+.book h3 {
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.book p {
+	margin: 5px;
+	color: #7B7B7B;
+	font-size: 12px;
+}
+
+.book img {
+	width: 150px;
+	box-shadow: 5px 3px 3px #7B7B7B;
+}
+
+
+.contact {
+	margin-top: 12px;
+	margin-left: 15px;
+	margin-right: 15px;
+	color: white;
+	text-decoration: none;
+	float: left;
+}
+
+.about {
+	margin-top: 12px;
+	color: white;
+	text-decoration: none;
+	float: left;
+}
+
+footer {
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background: #D55B77;;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 50px;
+}
+
+/* Sign In/Up/Out Styles*/
+
+form {
+	display: inline;
+}
+
+
+.logout {
+	margin-left: 20px;
+	display: inline;
+	border: none;
+	border-radius: 3px;
+	background: #D55B77;
+	color: white;
+	padding: 8px 18px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+nav p {
+	margin-left: 100px;
+	display: inline;
+	font-size: 15px;
+}
+
+.signin-section, .signup-section {
+	display: inline-block;
+	height: 590px;
+}
+
+.signin-section input, .signup-section input{
+	display: block;
+	margin-bottom: 10px;
+	height: 25px;
+	width: 300px; 
+	float: center;
+	margin-left: 40%;
+    margin-right:40%;
+    width: 20%;
+    padding-left: 15px;
+}
+
+input.signin , input.signup{
+	height: 35px;
+   	border: none;
+	border-radius: 3px;
+	margin-left: 40%;
+    margin-right:39%;
+    width: 21%;
+    padding: 5px;
+	background: #D55B77;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.signin-section h2, .signup-section h2{
+	font-size: 30px;
+}
+
+.signin-section p, .signup-section p{
+	font-size: 14px;
+	margin: 0;
+	padding-top: 10px;
+}
+
+.signin-section a {
+	color: #1B3893;
+	background: white;
+	border: none;
+	padding: 0;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+}
+
+.signup-section h3 {
+	margin-bottom: 15px;
+	margin-top: 20px;
+}
+
+.signup {
+	width: 300px;
+	font-size: 18px;
+}
+
+/* Contact Page styles*/
+
+.contact-section {
+	margin: 0;
+	height: 590px;
+}
+
+.contact-section h1{
+	margin: 50px;
+	font-size: 40px;
+}
+
+.contact-section h2{
+	margin: 0;
+}
+
+.contact-section p{
+	font-size: 14px;
+}
+
+.contact-section a{
+	color: #1B3893;
+	background: white;
+}
+
+/* About Us section styles */
+ 
+.aboutus {
+	text-align: left;
+	height: 1500px;
+}
+
+.aboutus h2{
+	font-size: 20px;
+	margin-left: 45%;
+}
+
+.aboutus p{
+	font-size: 14px;
+	margin: 30px 275px;
+}
+
+.aboutus h3 {
+	font-size: 16px;
+	margin: 30px 275px;
+}
+
+.about-landing {
+ 	background-image: url(about.jpg);
+ 	background-position:center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 85vh;
+	color: white;
+}
+
+.about-landing h1{
+	margin: 0;
+	padding-left: 145px;
+	padding-top: 100px;
+}
+
+.about-landing p{
+	margin: 0;
+	padding-left: 145px;
+	padding-top: 30px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* Borrower Profile Styles*/
+
+.sidebar {
+	float: left;
+	position: fixed;
+	margin-left: 40px;
+}
+
+.sidebar p {
+	background: white;
+	margin: 10px;
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+
+.sidebar input {
+	border: none;
+	display: block;
+	margin-top: 10px;
+	background: white;
+	color: black;
+	padding: 8px 18px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar input:hover {
+	border: none;
+	border-radius: 3px;
+	background: #D55B77;
+	color: white;
+	padding: 8px 18px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-body {
+	margin-top: 40px;
+	width: 80%;
+	height: 100%;
+	float: right;
+	overflow-y : scroll;
+	overflow-x : hidden;
+}
+
+/* Item profile styles */
+
+.book-profile h3 {
+	margin-top: 25px;
+	text-align: left;
+	font-size: 28px;
+}
+
+.book-profile p{
+	text-align: left;
+	display: block;
+	color: #7B7B7B;
+	font-size: 16px;
+	padding-right: 400px;
+	margin-bottom: 45px;
+}
+
+.book-profile img {
+	height: 350px;
+	float: left;
+	margin-left: 150px;
+	margin-right: 35px;
+	margin-top: 60px;
+}
+
+.book-profile input {
+	float: left;
+	width: 13%;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 50%;
+	margin-bottom: 10px;
+	height: 35px;
+   	border: none;
+	border-radius: 3px;
+    width: 14%;
+    padding: 5px;
+	background: #D55B77;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.librarian-functions input{
+	background: #D55B62;
+}
+
+/* BorrowerProfile styles for Add Item */
+
+#add-item {
+	text-align: center;
+	display: block;
+}
+
+#add-item input {
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%; 
+	height: 30px;
+	padding-left: 8px;
+}
+
+a.delete-edit {
+	background: white;
+	color: #1B3893;
+}
+
+a.delete-edit:hover {
+	background: white;
+	color: #D55B77;
+}  
+
+.librarian-info {
+	text-align: center;
+	display: inline-block;
+	margin: 20px;
+}
+
+.librarian-info p{
+	font-size: 14px;
+	margin: 0;
+}
+
+.librarian-info input{
+	width: 35%;
+	font-size: 14px;
 }
