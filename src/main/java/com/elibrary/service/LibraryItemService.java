@@ -33,8 +33,8 @@ public class LibraryItemService implements ILibraryItemService{
 	}
 
 	@Override
-	public List<LibraryItem> findAvailable() {
-		List<LibraryItem> items = (List<LibraryItem>) repository.findAvailable();
+	public List<LibraryItem> findByAvailable() {
+		List<LibraryItem> items = (List<LibraryItem>) repository.findByAvailable();
 		return items;
 	}
 
