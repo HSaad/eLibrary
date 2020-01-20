@@ -13,9 +13,9 @@ public interface ILibraryItemService {
 	List<LibraryItem> findAllAvailable();
 	LibraryItem findByID(Long id);
 	LibraryItem create(LibraryItem item);	
-	List<LibraryItem> findAllEbooks();
-	List<LibraryItem> findAllAudioBooks();
-	List<LibraryItem> findAllMagazines();
-	List<LibraryItem> findAllVideos();
+//	List<LibraryItem> findAllEbooks();
+//	List<LibraryItem> findAllAudioBooks();
+//	List<LibraryItem> findAllMagazines();
+//	List<LibraryItem> findAllVideos();
 	List<LibraryItem> findByType(Class type);
 }
