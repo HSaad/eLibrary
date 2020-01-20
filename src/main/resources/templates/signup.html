@@ -13,21 +13,21 @@
 			
 			<form action="#" th:action="@{/createuser}" th:object="${user}" method="post">
 				<h3>Enter your details: </h3>
-				<input placeholder=" First Name " type="text" name="firstname" id="firstname" th:field="*{firstName}">
-				<input placeholder=" Last Name " type="text" name="lastname" id="lastname" th:field="*{lastName}">
-				<input placeholder=" Email address " type="text" name="email" id="email" th:field="*{emailName}">
-				<input placeholder=" Username " type="text" name="username" id="username" th:field="*{username}">
+				<input placeholder=" First Name " type="text" name="firstname" id="firstname" th:field="*{firstName}"/>
+				<input placeholder=" Last Name " type="text" name="lastname" id="lastname" th:field="*{lastName}"/>
+				<input placeholder=" Email address " type="text" name="email" id="email" th:field="*{emailName}"/>
+				<input placeholder=" Username " type="text" name="username" id="username" th:field="*{username}"/>
 				
 				<h3>Set a password: </h3>
 				<p> Your password must be at least 8 characters.</p>
-				<input placeholder=" Password " type="password" name="pw" id="pw" th:field="*{password}">
-				<input placeholder=" Password again " type="password" name="pw1" id="pw1">
+				<input placeholder=" Password " type="password" name="pw" id="pw" th:field="*{password}"/>
+				<input placeholder=" Password again " type="password" name="pw1" id="pw1"/>
 				
 				<p> By clicking "Sign up," you confirm that you're 13 or older and agree to <br/>
 				E-Library's Privacy Policy and Terms and Conditions </p>
 				
 				
-				<input class="signup" type="submit" value="Sign Up">
+				<input class="signup" type="submit" value="Sign Up"/>
 			</form>
 		</section>
 </body>
