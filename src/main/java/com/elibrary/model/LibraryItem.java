@@ -52,8 +52,6 @@ public class LibraryItem{
 	private String genre;
 	private int publicationYear;
 	private String imgSrc;
-	
-	@Column(columnDefinition = "Number(1)")
 	private boolean available;
 	
 	public LibraryItem() {
