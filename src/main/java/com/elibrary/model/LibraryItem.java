@@ -21,16 +21,12 @@ import javax.persistence.Table;
 @DiscriminatorColumn(name = "item_type", length=20)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NamedQueries({
-	//find all library items
-	@NamedQuery(name = "library.findAll", query = "SELECT i FROM LibraryItem i"),
-	//find library item by itemID
-	//@NamedQuery(name = "library.findByID", query = "SELECT i FROM LibraryItem i WHERE i.itemID = :itemID"),
 	//find library item by title
-	//@NamedQuery(name = "library.findByTitle", query = "SELECT i FROM LibraryItem i WHERE UPPER(i.title) LIKE CONCAT('%',UPPER(:title),'%') "),
+	@NamedQuery(name = "Library.findByTitle", query = "SELECT i FROM LibraryItem i WHERE UPPER(i.title) LIKE CONCAT('%',UPPER(:title),'%') "),
 	//find all library items by author/creator
-	//@NamedQuery(name = "library.findByCreator", query = "SELECT i FROM LibraryItem i WHERE i.creator = :creator"),
+	@NamedQuery(name = "Library.findByCreator", query = "SELECT i FROM LibraryItem i WHERE i.creator = :creator"),
 	//find all library items that are available (true)
-	//@NamedQuery(name = "library.findAllAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = 1"),
+	@NamedQuery(name = "Library.findAllAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = 1"),
 	
 	//find all ebooks
 	//@NamedQuery(name = "library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Heroku Connect Demo</title>
+    <title>Heroku Spring Boot Demo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../assets/css/bootstrap.css" th:href="@{/assets/css/bootstrap.css}" />
     <link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />
@@ -9,11 +9,17 @@
 <body>
 <!--<div style="margin-top: 20px;margin-left: 50px">-->
 <div class="container">
-<h2> Heroku Spring Boot PostgreSQLDemo : </h2>
-
-	<p class="style1"> Get List of Users : <a href="/users">Link</a></p>
-    <p class="style1"> Create a User : <a href="/createuserform">Link</a></p>
-	<p class="style1"> Get List of Items : <a href="/items">Link</a></p>
+<h3> Users : </h3>
+<table>
+<th><td>Id</td><td>Title</td><td>Creator</td><td>Description</td><td>Company</td><td>City</td></th>
+<tr th:each="item : ${items}">
+    <td></td>
+    <td th:text="${item.id}" ></td>
+    <td th:text="${item.title}" ></td>
+    <td th:text="${item.creator}" ></td>
+    <td th:text="${item.description}" ></td>
+</tr>
+</table>
 </div>
 </body>
 </html>

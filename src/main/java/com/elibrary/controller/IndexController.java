@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.elibrary.model.LibraryItem;
 import com.elibrary.model.User;
+import com.elibrary.service.ILibraryItemService;
 import com.elibrary.service.IUserService;
 
 @Controller
@@ -26,6 +28,9 @@ public class IndexController {
 	
 	@Autowired
 	private IUserService userService;
+	
+	@Autowired
+	private ILibraryItemService itemService;
 	
     @RequestMapping("/")
     public String home(Model model) {
@@ -51,5 +56,12 @@ public class IndexController {
         model.addAttribute("user", user);
         userService.create(user);
         return "result";
+    }
+    
+    @RequestMapping("/items")
+    public String findAllItems(Model model) {
+    	List<LibraryItem> items = (List<LibraryItem>) itemService.findAll();
+    	model.addAttribute("items", items);
+    	return "item";
     }
 }
