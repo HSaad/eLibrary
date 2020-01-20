@@ -7,15 +7,12 @@ import com.elibrary.model.*;
 public interface IUserService {
 	List<User> findAllOrderedDescending();
 	List<User> findAll();
-	//User findByID(Long id);
 	User findByUsername(String username);
 	User findByEmail(String email);	
-	User create(User user);
-//	User readByUsername(String username);
-//	User readByEmail(String email);		
-//	List<User> readAllAdmins();
-//	List<User> readAllBorrowers();
-//	List<User> readAllLibrarians();
-//	List<User> readByType(Class type);
+	User create(User user);	
+	List<User> findAllAdmins();
+	List<User> findAllBorrowers();
+	List<User> findAllLibrarians();
+	List<User> findByType(Class type);
 	User findByID(Long id);
 }
