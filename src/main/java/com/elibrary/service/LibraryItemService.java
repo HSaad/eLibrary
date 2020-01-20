@@ -50,4 +50,10 @@ public class LibraryItemService implements ILibraryItemService{
 		return item;
 	}
 
+	@Override
+	public List<LibraryItem> findAllAvailable() {
+		List<LibraryItem> items = (List<LibraryItem>) repository.findByAvailable(true);
+		return items;
+	}
+
 }

@@ -10,6 +10,7 @@ public interface ILibraryItemService {
 	List<LibraryItem> findByTitle(String title);
 	List<LibraryItem> findByCreator(String creator);		
 	List<LibraryItem> findByAvailable(boolean available);
+	List<LibraryItem> findAllAvailable();
 	LibraryItem findByID(Long id);
 	LibraryItem create(LibraryItem item);	
 }
