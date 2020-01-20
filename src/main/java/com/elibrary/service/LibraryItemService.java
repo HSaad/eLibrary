@@ -68,4 +68,10 @@ public class LibraryItemService implements ILibraryItemService{
 		return items;
 	}
 
+	@Override
+	public List<LibraryItem> findAllVideos() {
+		List<LibraryItem> items = (List<LibraryItem>) repository.findAllVideos();
+		return items;
+	}
+
 }

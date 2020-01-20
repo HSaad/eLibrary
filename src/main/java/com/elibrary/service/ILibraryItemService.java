@@ -15,4 +15,5 @@ public interface ILibraryItemService {
 	LibraryItem create(LibraryItem item);	
 	List<LibraryItem> findAllMagazines();
 	List<LibraryItem> findAllAudioBooks();
+	List<LibraryItem> findAllVideos();
 }

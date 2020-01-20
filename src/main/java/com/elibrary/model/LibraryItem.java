@@ -34,7 +34,7 @@ import javax.persistence.Table;
 //	//find all ebooks
 //		@NamedQuery(name = "library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
 //		//find all videos
-//		@NamedQuery(name = "library.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
+		@NamedQuery(name = "LibraryItem.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
 //		//Find library items by type
 //		@NamedQuery(name = "library.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type"),
 
