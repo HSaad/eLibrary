@@ -120,15 +120,15 @@ public class User {
 				+ ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = (int) (prime * result + id);
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
-		return result;
-	}
+//	@Override
+//	public int hashCode() {
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result + ((email == null) ? 0 : email.hashCode());
+//		result = (int) (prime * result + id);
+//		result = prime * result + ((username == null) ? 0 : username.hashCode());
+//		return result;
+//	}
 
 	@Override
 	public boolean equals(Object obj) {
