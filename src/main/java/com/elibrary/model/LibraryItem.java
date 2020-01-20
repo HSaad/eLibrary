@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="libitem")
-@DiscriminatorColumn(name = "library_item_type", length=20)
+@DiscriminatorColumn(name = "item_type", length=20)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NamedQueries({
 	//find library item by title
@@ -28,7 +28,7 @@ import javax.persistence.Table;
 	//find all library items that are available (true)
 	@NamedQuery(name = "Library.findByAvailable", query = "SELECT i FROM LibraryItem i WHERE i.available = :available"),
 //	//find all ebooks
-//	@NamedQuery(name = "Library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
+	@NamedQuery(name = "Library.findAllEbooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Ebook"),
 //	//find all audiobooks
 //	@NamedQuery(name = "Library.findAllAudioBooks", query = "SELECT i from LibraryItem i WHERE TYPE(i) = AudioBook"),
 //	//find all magazines
@@ -36,7 +36,7 @@ import javax.persistence.Table;
 //	//find all videos
 //	@NamedQuery(name = "Library.findAllVideos", query = "SELECT i from LibraryItem i WHERE TYPE(i) = Video"),
 	//Find library items by type
-	@NamedQuery(name = "Library.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type")
+	//@NamedQuery(name = "Library.findByType", query = "SELECT i from LibraryItem i WHERE TYPE(i) = :type")
 })
 public class LibraryItem{
 	
