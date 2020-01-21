@@ -14,18 +14,18 @@
 				<a class="logo" href="/index"> <img width="30px" height="30px" alt="Digital Library Logo" src="styles/ELibraryLogo.png"/> </a> <!-- FIND LOGO -->
 				
 				<!-- Search icon in css -->
-				<form method="get" action="#">
+				<form method="get" action="/searched">
 					<input placeholder=" Search by title " type="text" name="search" id="search"/>
 					<input class="search-icon" type="submit" value=""/>
 				</form>
 				
-				<a class="sign-in" href="/signin" th:if="${loggedInUser == null}"> Sign In</a>
-				<a class="sign-up" href="/signup" th:if="${loggedInUser == null}"> Sign Up </a>
+				<a class="sign-in" href="/signin" th:if="${session.loggedInUser == null}"> Sign In</a>
+				<a class="sign-up" href="/signup" th:if="${session.loggedInUser == null}"> Sign Up </a>
 				
-				<div th:if="${loggedInUser != null}">
-					<a class="profile" href="profile" th:text="'Welcome ' + ${loggedInUser.firstName}"></a>
+				<div th:if="${session.loggedInUser != null}">
+					<a class="profile" href="profile" th:text="'Welcome ' + ${session.loggedInUser.firstName}"></a>
 				
-					<form method="get" action="logout">
+					<form method="get" action="/logout">
 						<input class="logout" type="submit" value="Sign Out"/>
 					</form>
 				</div>
