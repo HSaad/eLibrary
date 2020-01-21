@@ -2,21 +2,23 @@ package com.elibrary.dao;
 
 import java.util.List;
 
+import javax.persistence.NamedQuery;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.elibrary.model.LibraryItem;
 import com.elibrary.model.Loan;
+import com.elibrary.model.User;
 
 @Repository
 public interface LoanRepository extends CrudRepository<Loan, Long>{
 	
 	List<Loan> findAll();
-//	List<LibraryItem> findByTitle(String title);
-//	List<LibraryItem> findByCreator(String creator);		
-//	List<LibraryItem> findByAvailable(boolean available);
-//	List<LibraryItem> findAllMagazines();
-//	List<LibraryItem> findAllAudioBooks();
-//	List<LibraryItem> findAllVideos();
-//	List<LibraryItem> findAllEbooks();
-//	List<LibraryItem> findByType(Class type);
+	Loan findByUserAndItem(User user, LibraryItem item);
+	List<Loan> findByItem(LibraryItem item);
+	List<Loan> findByUser(User user);
+	List<Loan> findAllCurrentLoansByUser(User user);
+	List<Loan> findAllCurrentLoansByItem(LibraryItem item);
+	List<Loan> findAllCurrentLoans();
 }

@@ -19,21 +19,18 @@ import javax.persistence.Table;
 @NamedQueries({
 	//find all loans
 	@NamedQuery(name = "Loan.findAll", query = "SELECT l FROM Loan l"),
-	//find library item by itemID
-//	@NamedQuery(name = "loan.findByID", query = "SELECT l FROM Loan l WHERE l.loanID = :loanID"),
-//	//find loan by itemID and userID
-//	@NamedQuery(name = "loan.findByUserAndItem", query = "SELECT l FROM Loan l WHERE l.user = :user AND l.item = :item AND l.returnedDate IS NULL"),
-//	//find all loans on a specific library item
-//	@NamedQuery(name = "loan.findByItem", query = "SELECT l FROM Loan l WHERE l.item = :item"),
-//	//find all loans by userID (loan history)
-//	@NamedQuery(name = "loan.findByUser", query = "SELECT l FROM Loan l WHERE l.user = :user AND l.returnedDate IS NOT NULL"),
-//		
-//	//find all current loans by userID 
-//	@NamedQuery(name = "loan.findAllCurrentLoansByUser", query = "SELECT l from Loan l WHERE l.user = :user AND l.returnedDate IS NULL"),
-//	//find all current loans by itemID 
-//	@NamedQuery(name = "loan.findAllCurrentLoansByItem", query = "SELECT l from Loan l WHERE l.item = :item AND l.returnedDate IS NULL"),
-//	//find all current loans
-//	@NamedQuery(name = "loan.findAllCurrentLoans", query = "SELECT l from Loan l WHERE l.returnedDate IS NULL")
+	//find loan by itemID and userID
+	@NamedQuery(name = "Loan.findByUserAndItem", query = "SELECT l FROM Loan l WHERE l.user = :user AND l.item = :item AND l.returnedDate IS NULL"),
+	//find all loans on a specific library item
+	@NamedQuery(name = "Loan.findByItem", query = "SELECT l FROM Loan l WHERE l.item = :item"),
+	//find all loans by userID (loan history)
+	@NamedQuery(name = "Loan.findByUser", query = "SELECT l FROM Loan l WHERE l.user = :user AND l.returnedDate IS NOT NULL"),
+	//find all current loans by userID 
+	@NamedQuery(name = "Loan.findAllCurrentLoansByUser", query = "SELECT l from Loan l WHERE l.user = :user AND l.returnedDate IS NULL"),
+	//find all current loans by itemID 
+	@NamedQuery(name = "Loan.findAllCurrentLoansByItem", query = "SELECT l from Loan l WHERE l.item = :item AND l.returnedDate IS NULL"),
+	//find all current loans
+	@NamedQuery(name = "Loan.findAllCurrentLoans", query = "SELECT l from Loan l WHERE l.returnedDate IS NULL")
 })
 public class Loan{
 
