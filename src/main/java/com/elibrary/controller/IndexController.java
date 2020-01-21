@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -175,17 +176,28 @@ public class IndexController {
    
     @RequestMapping(value="/createitem", method=RequestMethod.POST)
     public String createItem(@ModelAttribute LibraryItem item, Model model, @RequestParam("classType") String type) {
+		String title = item.getTitle();
+		String description = item.getDescription();
+		String genre = item.getGenre();
+		String creator = item.getCreator();
+		int publicationYear = item.getPublicationYear();
+		String imgSrc = item.getImgSrc();
+    	
     	if(type.equals("Ebook")) {
-    		Ebook book = (Ebook) item;
-    		itemService.create(book);
+    		Ebook ebook =  ((Ebook) new Ebook().setTitle(title).setDescription(description).setDateAdded(LocalDate.now()).setAvailable(true).
+					setGenre(genre).setCreator(creator).setPublicationYear(publicationYear).setImgSrc(imgSrc));
+    		itemService.create(ebook);
     	}else if (type.equals("Audiobook")) {
-    		AudioBook audiobook = (AudioBook) item;
+    		AudioBook audiobook =  ((AudioBook) new AudioBook().setTitle(title).setDescription(description).setDateAdded(LocalDate.now()).setAvailable(true).
+					setGenre(genre).setCreator(creator).setPublicationYear(publicationYear).setImgSrc(imgSrc));
     		itemService.create(audiobook);
     	}else if (type.equals("Magazine")){
-    		Magazine magazine = (Magazine) item;
+    		Magazine magazine =  ((Magazine) new Magazine().setTitle(title).setDescription(description).setDateAdded(LocalDate.now()).setAvailable(true).
+					setGenre(genre).setCreator(creator).setPublicationYear(publicationYear).setImgSrc(imgSrc));
     		itemService.create(magazine);
     	}else if (type.equals("Video")){
-    		Video video = (Video) item;
+    		Video video =  ((Video) new Video().setTitle(title).setDescription(description).setDateAdded(LocalDate.now()).setAvailable(true).
+					setGenre(genre).setCreator(creator).setPublicationYear(publicationYear).setImgSrc(imgSrc));
     		itemService.create(video);
     	} else {
     		itemService.create(item);
