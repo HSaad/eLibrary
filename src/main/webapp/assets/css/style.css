@@ -132,7 +132,6 @@ section {
 
 p {
 	margin: 20px;
-	padding-bottom: 20px;
 	font-size: 20px;
 }
 
@@ -518,4 +517,15 @@ a.delete-edit:hover {
 .librarian-info input{
 	width: 35%;
 	font-size: 14px;
+}
+
+#page-container {
+	position:relative;
+	min-height: 100vh;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
