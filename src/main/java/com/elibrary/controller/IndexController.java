@@ -175,24 +175,23 @@ public class IndexController {
    
     @RequestMapping(value="/createitem", method=RequestMethod.POST)
     public String createItem(@ModelAttribute LibraryItem item, Model model, @RequestParam("classType") String type) {
-//    	if(type == "Ebook") {
-//    		Ebook book = (Ebook) item;
-//    		itemService.create(book);
-//    	}else if (type == "Audiobook") {
-//    		AudioBook audiobook = (AudioBook) item;
-//    		itemService.create(audiobook);
-//    	}else if (type == "Magazine"){
-//    		Magazine magazine = (Magazine) item;
-//    		itemService.create(magazine);
-//    	}else if (type == "Video"){
-//    		Video video = (Video) item;
-//    		itemService.create(video);
-//    	} else {
-//    		itemService.create(item);
-//    	}
-    	model.addAttribute("type", type);
-    	return "result";
-        //return "browse";
+    	if(type.equals("Ebook")) {
+    		Ebook book = (Ebook) item;
+    		itemService.create(book);
+    	}else if (type.equals("Audiobook")) {
+    		AudioBook audiobook = (AudioBook) item;
+    		itemService.create(audiobook);
+    	}else if (type.equals("Magazine")){
+    		Magazine magazine = (Magazine) item;
+    		itemService.create(magazine);
+    	}else if (type.equals("Video")){
+    		Video video = (Video) item;
+    		itemService.create(video);
+    	} else {
+    		itemService.create(item);
+    	}
+    	
+        return "browse";
     }
 
     @RequestMapping("/items")
