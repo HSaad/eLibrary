@@ -47,6 +47,11 @@ public class IndexController {
         return "home";
     }
     
+    @RequestMapping("/contact")
+    public String contact(Model model) {
+        return "contact";
+    }
+    
     @RequestMapping("/index")
     public String index(Model model) {
 

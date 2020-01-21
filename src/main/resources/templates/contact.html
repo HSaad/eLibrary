@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Digital Library: Borrow eBooks, audiobooks and videos</title>
-    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    	<link rel="stylesheet" href="../assets/css/bootstrap.css" th:href="@{/assets/css/bootstrap.css}" />
-    	<link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />
-	</head>
-	<body>
-	  <div id="page-container">
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+	<title>Contact Us</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" th:href="@{/assets/css/bootstrap.css}" />
+    <link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />
+  </head>
+  <body>
+  	<div id="page-container">
 		<!-- Navigation: Logo, Search Bar, Sign In/Out -->
 		<header>
 			<nav>
@@ -31,20 +31,16 @@
 				</div>
 			</nav>
 		</header>
-	
-		<!--Search Results -->
-		<section>
-			<div class="main-body">
-				<p th:if="${searchResults == null}">Sorry, there is no item with that title</p>
-				<div th:if="${searchResults != null}" class="book" th:each="item : ${searchResults}"> 
-					<a class="profile" href="">
-  					<img th:alt="${item.title}" th:src="${item.imgSrc}"/>
-					<h3 th:text="${item.title}"></h3>
-					<p th:text="${item.creator}"></p><p th:text="${item.publicationYear}"></p>
-					<p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
-					</a>
-				</div>
- 			</div>
+		
+		<section class="contact-section">
+			<h1> Get In Touch </h1>
+			<p> Hagr Saad <br> Toronto ON <br> Canada</p>
+			
+			<h2>Call Us: </h2>	
+			<p>(123)456-7890</p>
+			
+			<h2> Email: </h2>
+			<a href="mailto:Hagr.Saad@fdmgroup.com">help@elibrary.com</a>
 		</section>
 		
 		<!-- Footer: Company Links -->
