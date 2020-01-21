@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Digital Library: Borrow eBooks, audiobooks and videos</title>
+    <link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />
+  </head>
+  <body>
+	<!-- Navigation: Logo, Search Bar, Sign In/Out -->
+		<header>
+			<nav>
+				<a class="logo" href="index-first.jsp"> <img width="30px" height="30px" alt="Digital Library Logo" src="styles/ELibraryLogo.png"> </a> <!-- FIND LOGO -->
+				
+				<!-- Search icon in css -->
+				<form method="get" action="searched">
+					<input placeholder=" Search by title " type="text" name="search" id="search">
+					<input class="search-icon" type="submit" value="">
+				</form>
+			</nav>
+		</header>
+		
+		<!-- Body: Front page, Browsing book lists -->
+		<section>
+			<div class="landing"> 
+				<!-- image in background css -->
+				
+				<h1> Access to the most content </h1>
+				<p> Borrow eBooks, audiobooks, and more - anywhere, anytime. </p>
+				
+				
+					<a class="landing-buttons" href=""> Sign In</a>
+				
+							
+				<a class="landing-buttons" href=""> Browse </a>
+			</div>
+			
+			<div class="transition"></div>
+			
+			<div class="booklist">
+			
+			<!-- Display Book Lists -->
+			<h2>Must Reads</h2>
+			<div>
+
+ 			</div>
+			
+			<h2>Recommended eBooks </h2>
+				
+			<div>
+		
+			</div>
+				
+			<h2>Recommended Audiobooks </h2>
+				
+			<div>
+			
+			</div>
+			
+			</div>
+		</section>
+		
+		<!-- Footer: Company Links -->
+		<footer>
+			<a class="contact" href=""> Contact </a> 
+			<a class="about" href="">About Us</a>
+		</footer>
+  </body>
+</html>

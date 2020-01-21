@@ -42,6 +42,11 @@ public class IndexController {
         return "home";
     }
     
+    @RequestMapping("/index")
+    public String index(Model model) {
+        return "index";
+    }
+    
     @RequestMapping("/users")
     public String findAllOrderedByNameDescending(Model model) {
     	List<User> users = (List<User>) userService.findAll();
