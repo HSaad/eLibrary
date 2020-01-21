@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,19 +73,21 @@ public class IndexController {
     }
     
     @RequestMapping(value="/login", method=RequestMethod.POST)
-    public String logInUser(@ModelAttribute User user, Model model) {
+    public String logInUser(HttpServletRequest request, @ModelAttribute User user, Model model) {
     	String email = user.getEmail();
     	String password = user.getPassword();
 		User foundUser = userService.findByEmail(email);
 		
 		if(foundUser == null) {
-			System.out.println("User not found!"); //redirect back to login page
+			System.out.println("User not found!"); 
+			//redirect back to login page
 			return "signin";
 		}else if(password != null && password.equals(foundUser.getPassword())) {
 			List<Loan> loanedItems = loanService.findAllCurrentLoansByUser(foundUser);
 			List<Loan> history = loanService.findByUser(foundUser);
 			
-			model.addAttribute("loggedInUser", foundUser);
+			request.getSession().setAttribute("loggedInUser", foundUser);
+			//model.addAttribute("loggedInUser", foundUser);
 			model.addAttribute("loans", loanedItems);
 			model.addAttribute("history", history);
 			
