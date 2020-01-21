@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Table(name="loan")
 @NamedQueries({
 	//find all loans
-	//@NamedQuery(name = "loan.findAll", query = "SELECT l FROM Loan l"),
+	@NamedQuery(name = "Loan.findAll", query = "SELECT l FROM Loan l"),
 	//find library item by itemID
 //	@NamedQuery(name = "loan.findByID", query = "SELECT l FROM Loan l WHERE l.loanID = :loanID"),
 //	//find loan by itemID and userID

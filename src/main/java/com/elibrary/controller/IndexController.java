@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.elibrary.model.LibraryItem;
+import com.elibrary.model.Loan;
 import com.elibrary.model.User;
 import com.elibrary.service.ILibraryItemService;
+import com.elibrary.service.ILoanService;
 import com.elibrary.service.IUserService;
 
 @Controller
@@ -31,6 +33,9 @@ public class IndexController {
 	
 	@Autowired
 	private ILibraryItemService itemService;
+	
+	@Autowired
+	private ILoanService loanService;
 	
     @RequestMapping("/")
     public String home(Model model) {
@@ -76,5 +81,12 @@ public class IndexController {
     	List<LibraryItem> items = (List<LibraryItem>) itemService.findAll();
     	model.addAttribute("items", items);
     	return "item";
+    }
+    
+    @RequestMapping("/loans")
+    public String findAllLoans(Model model) {
+    	List<Loan> loans = (List<Loan>) loanService.findAll();
+    	model.addAttribute("loans", loans);
+    	return "loan";
     }
 }
