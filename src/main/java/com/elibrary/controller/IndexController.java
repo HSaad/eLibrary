@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +27,8 @@ import com.elibrary.model.User;
 import com.elibrary.service.ILibraryItemService;
 import com.elibrary.service.ILoanService;
 import com.elibrary.service.IUserService;
+
+import main.java.model.User_JPA;
 
 @Controller
 public class IndexController {
@@ -64,7 +69,33 @@ public class IndexController {
     
     @RequestMapping("/signin")
     public String logInUserForm(Model model) {
-        //model.addAttribute("user", new User());
+        model.addAttribute("loggedInUser", new User());
+        return "signin";
+    }
+    
+    @RequestMapping(value="/login", method=RequestMethod.POST)
+    public String logInUser(@ModelAttribute User user, Model model) {
+    	
+		User foundUser = userService.findByEmail(user.getEmail());
+		
+		if(foundUser == null) {
+			System.out.println("User not found!!"); //redirect back to login page
+			return "index";
+		}else if(user.getPassword() != null && user.getPassword().equals(foundUser.getPassword())) {
+			List<Loan> loanedItems = loanService.findAllCurrentLoansByUser(foundUser);
+			List<Loan> history = loanService.findByUser(foundUser);
+			
+			model.addAttribute("loggedInUser", foundUser);
+			model.addAttribute("loans", loanedItems);
+			model.addAttribute("history", history);
+
+			//TODO check the type of user and display the appropriate file
+			//go to profile
+		}else {
+			 //redirect back to signin //display error msg for password (wrong password)
+			return "index";
+		}
+		
         return "signin";
     }
     
