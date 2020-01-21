@@ -14,9 +14,7 @@
 <th><td>Id</td><td>User</td><td>Item</td><td>Description</td><td>Company</td><td>City</td></th>
 <tr th:each="loan : ${loans}">
     <td></td>
-    <td th:text="${item.id}" ></td>
-    <td th:text="${item.userId}" ></td>
-    <td th:text="${item.itemId}" ></td>
+    <td th:text="${loan.id}" ></td>
 </tr>
 </table>
 </div>

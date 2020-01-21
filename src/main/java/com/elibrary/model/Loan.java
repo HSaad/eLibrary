@@ -42,10 +42,10 @@ public class Loan{
 	private Long id;
 	
 	@ManyToOne
-	private LibraryItem itemId;
+	private LibraryItem item;
 	
 	@ManyToOne
-	private User userId;
+	private User user;
 
 	private LocalDate borrowedDate;	
 	private LocalDate returnedDate;
@@ -57,16 +57,16 @@ public class Loan{
 	public Loan(Long id, LibraryItem item, User user, LocalDate borrowedDate, LocalDate returnedDate) {
 		super();
 		this.id = id;
-		this.itemId = item;
-		this.userId = user;
+		this.item = item;
+		this.user = user;
 		this.borrowedDate = borrowedDate;
 		this.returnedDate = returnedDate;
 	}
 	
 	public Loan(LibraryItem item, User user, LocalDate borrowedDate, LocalDate returnedDate) {
 		super();
-		this.itemId = item;
-		this.userId = user;
+		this.item = item;
+		this.user = user;
 		this.borrowedDate = borrowedDate;
 		this.returnedDate = returnedDate;
 	}
@@ -99,20 +99,20 @@ public class Loan{
 	}
 	
 	public LibraryItem getItem() {
-		return itemId;
+		return item;
 	}
 
 	public Loan setItem(LibraryItem item) {
-		this.itemId = item;
+		this.item = item;
 		return this;
 	}
 
 	public User getUser() {
-		return userId;
+		return user;
 	}
 
 	public Loan setUser(User user) {
-		this.userId = user;
+		this.user = user;
 		return this;
 	}
 
@@ -132,7 +132,7 @@ public class Loan{
 	
 	@Override
 	public String toString() {
-		return "Loan [loanID=" + id + ", itemID=" + itemId + ", userID=" + userId + ", borrowedDate=" + borrowedDate
+		return "Loan [loanID=" + id + ", itemID=" + item + ", userID=" + user + ", borrowedDate=" + borrowedDate
 				+ ", returnedDate=" + returnedDate + "]";
 	}
 }
