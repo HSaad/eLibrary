@@ -53,7 +53,21 @@ public class IndexController {
     }
 
     @RequestMapping("/profile")
-    public String profile(Model model) {
+    public String profile(HttpSession session, Model model, @RequestParam("button") String button) {
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
+		String buttonClicked = button;
+		model.addAttribute("buttonClicked", buttonClicked);
+		
+		List<Loan> loanedItems = loanService.findAllCurrentLoansByUser(loggedInUser);
+		session.setAttribute("loans", loanedItems);
+
+		//Add user history to session
+		List<Loan> history = loanService.findByUser(loggedInUser);
+		session.setAttribute("history", history);
+		
+		ArrayList<User> librarians = (ArrayList<User>) userService.findAllLibrarians();
+		session.setAttribute("librarians", librarians);
+	
     	return "borrowerProfile";
     }
     
