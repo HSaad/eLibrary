@@ -73,32 +73,26 @@ public class IndexController {
     
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String logInUser(@ModelAttribute User user, Model model) {
-    	String email = user.getEmail();
-    	User foundUser = userService.findByEmail(email);
-    	model.addAttribute("email", email);
-    	model.addAttribute("user", foundUser);
-    	return "result";
-//		User foundUser = userService.findByEmail(user.getEmail());
-//		
-//		if(foundUser == null) {
-//			System.out.println("User not found!"); //redirect back to login page
-//			return "index";
-//		}else if(user.getPassword() != null && user.getPassword().equals(foundUser.getPassword())) {
-//			List<Loan> loanedItems = loanService.findAllCurrentLoansByUser(foundUser);
-//			List<Loan> history = loanService.findByUser(foundUser);
-//			
-//			model.addAttribute("loggedInUser", foundUser);
-//			model.addAttribute("loans", loanedItems);
-//			model.addAttribute("history", history);
-//
-//			//TODO check the type of user and display the appropriate file
-//			//go to profile
-//		}else {
-//			 //redirect back to signin //display error msg for password (wrong password)
-//			return "index";
-//		}
-//		
-//        return "signin";
+
+		User foundUser = userService.findByEmail(user.getEmail());
+		
+		if(foundUser == null) {
+			System.out.println("User not found!"); //redirect back to login page
+			return "signin";
+		}else if(user.getPassword() != null && user.getPassword().equals(foundUser.getPassword())) {
+			List<Loan> loanedItems = loanService.findAllCurrentLoansByUser(foundUser);
+			List<Loan> history = loanService.findByUser(foundUser);
+			
+			model.addAttribute("loggedInUser", foundUser);
+			model.addAttribute("loans", loanedItems);
+			model.addAttribute("history", history);
+			return "index";
+			//TODO check the type of user and display the appropriate file
+			//go to profile
+		}else {
+			 //redirect back to signin //display error msg for password (wrong password)
+			return "signin";
+		}
     }
     
     @RequestMapping("/createitemform")
