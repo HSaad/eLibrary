@@ -184,9 +184,11 @@ public class IndexController {
     	}else if (type == "Magazine"){
     		Magazine magazine = (Magazine) item;
     		itemService.create(magazine);
-    	}else {
+    	}else if (type == "Video"){
     		Video video = (Video) item;
     		itemService.create(video);
+    	} else {
+    		itemService.create(item);
     	}
         return "browse";
     }
