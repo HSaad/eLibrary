@@ -57,11 +57,16 @@ public class IndexController {
         return "about";
     }
     
+    @RequestMapping("/browse")
+    public String browse(Model model) {
+        return "browse";
+    }
+    
     @RequestMapping("/index")
-    public String index(Model model) {
+    public String index(HttpSession session, Model model) {
 
 		ArrayList<LibraryItem> libraryCatalogue = (ArrayList<LibraryItem>) itemService.findAll();
-		model.addAttribute("catalogue", libraryCatalogue);
+		session.setAttribute("catalogue", libraryCatalogue);
 		
 		ArrayList<LibraryItem> ebooks = (ArrayList<LibraryItem>) itemService.findAllEbooks();
 		model.addAttribute("ebooks", ebooks);
@@ -110,7 +115,7 @@ public class IndexController {
 			model.addAttribute("loans", loanedItems);
 			model.addAttribute("history", history);
 			
-			return "index";
+			return "/index";
 			//TODO check the type of user and display the appropriate file
 			//go to profile
 		}else {

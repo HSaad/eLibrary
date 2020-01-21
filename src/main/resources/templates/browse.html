@@ -1,13 +1,14 @@
+
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Sign Up for an E-Library Account</title>
+    <title>Browse for eBooks, audiobooks and videos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../assets/css/bootstrap.css" th:href="@{/assets/css/bootstrap.css}" />
     <link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />
 </head>
-<body>
-	<div id="page-container">  
+	<body>
+		<div id="page-container">  
 	<!-- Navigation: Logo, Search Bar, Sign In/Out -->
 		<header>
 			<nav>
@@ -32,29 +33,22 @@
 			</nav>
 		</header>
 		
-	<section class="signup-section">
-			<h2>Sign Up</h2>
-			
-			<form th:action="@{/createuser}" th:object="${user}" method="post">
-				<h3>Enter your details: </h3>
-				<input placeholder=" First Name " type="text" name="firstname" id="firstname" th:field="*{firstName}"/>
-				<input placeholder=" Last Name " type="text" name="lastname" id="lastname" th:field="*{lastName}"/>
-				<input placeholder=" Email address " type="text" name="email" id="email" th:field="*{email}"/>
-				<input placeholder=" Username " type="text" name="username" id="username" th:field="*{username}"/>
-				
-				<h3>Set a password: </h3>
-				<p> Your password must be at least 8 characters.</p>
-				<input placeholder=" Password " type="password" name="pw" id="pw" th:field="*{password}"/>
-				<input placeholder=" Password again " type="password" name="pw1" id="pw1"/>
-				
-				<p> By clicking "Sign up," you confirm that you're 13 or older and agree to <br/>
-				E-Library's Privacy Policy and Terms and Conditions </p>
-				
-				
-				<input class="signup" type="submit" value="Sign Up"/>
-			</form>
+		<section>
+			<h2></h2>
+			<!-- Display Book Lists -->
+			<div th:if="${session.catalogue != null}">
+  				<div th:each="item : ${session.catalogue}" class="book""> 
+  					<a class="profile" href="">
+  					<img th:alt="${item.title}" th:src="${item.imgSrc}"/>
+					<h3 th:text="${item.title}"></h3>
+					<p th:text="${item.creator}"></p><p th:text="${item.publicationYear}"></p>
+					<p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
+					</a>
+				</div>
+ 			</div>
 		</section>
-				<!-- Footer: Company Links -->
+		
+		<!-- Footer: Company Links -->
 		<footer id="footer">
 			<a class="contact" href="/contact"> Contact </a> 
 			<a class="about" href="/about">About Us</a>

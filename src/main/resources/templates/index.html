@@ -42,7 +42,7 @@
 								
 				<a class="landing-buttons" href="/signin" th:if="${session.loggedInUser == null}"> Sign In</a>
 
-				<a class="landing-buttons" href=""> Browse </a>
+				<a class="landing-buttons" href="/browse"> Browse </a>
 			</div>
 			
 			<div class="transition"></div>
@@ -50,9 +50,9 @@
 			<div class="booklist">
 			
 			<!-- Display Book Lists -->
-			<div th:if="${catalogue != null}">
+			<div th:if="${session.catalogue != null}">
 				<h2>Must Reads</h2>
-  				<div th:each="book,iterStat : ${catalogue}" class="book" th:unless="${iterStat.index > 4}"> 
+  				<div th:each="book,iterStat : ${session.catalogue}" class="book" th:unless="${iterStat.index > 4}"> 
   					<a class="profile" href="">
   					<img th:alt="${book.title}" th:src="${book.imgSrc}"/>
 					<h3 th:text="${book.title}"></h3>
