@@ -34,3 +34,12 @@ CREATE TABLE IF NOT EXISTS libitem
      frequency varchar(100),
      edition varchar(100)
 );
+
+CREATE TABLE IF NOT EXISTS loan
+(
+     id SERIAL PRIMARY KEY NOT NULL,
+     item varchar(20),
+     user varchar(100),
+     borrowed_date date,
+     returned_date date
+);
