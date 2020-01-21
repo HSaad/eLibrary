@@ -55,8 +55,8 @@ public class IndexController {
 		ArrayList<LibraryItem> ebooks = (ArrayList<LibraryItem>) itemService.findAllEbooks();
 		model.addAttribute("ebooks", ebooks);
 		
-//		ArrayList<LibraryItem> audiobooks = (ArrayList<LibraryItem>) itemService.findAllAudioBooks();
-//		model.addAttribute("audiobooks", audiobooks);
+		ArrayList<LibraryItem> audiobooks = (ArrayList<LibraryItem>) itemService.findAllAudioBooks();
+		model.addAttribute("audiobooks", audiobooks);
 		
         return "index";
     }

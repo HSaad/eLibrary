@@ -59,8 +59,6 @@
 					</a>
 				</div>
  			</div>
-			
-			<h2>Recommended eBooks </h2>
 				
 			<div th:if="${ebooks != null}">
 				<h2>Recommended eBooks </h2>
@@ -73,11 +71,16 @@
 				</div>
  			</div>
 				
-			<h2>Recommended Audiobooks </h2>
-				
-			<div>
-			
-			</div>
+			<div th:if="${audiobooks != null}">
+				<h2>Recommended Audiobooks </h2>
+  				<div th:each="book,iterStat : ${audiobooks}" class="book" th:unless="${iterStat.index > 4}"> 
+  					<a class="profile" href="">
+  					<img th:alt="${book.title}" th:src="${book.imgSrc}"/>
+					<h3 th:text="${book.title}"></h3>
+					<p th:text="${book.creator}"></p><p th:text="${book.publicationYear}"></p>
+					</a>
+				</div>
+ 			</div>
 			
 			</div>
 		</section>
