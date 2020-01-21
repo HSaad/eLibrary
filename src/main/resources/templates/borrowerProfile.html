@@ -38,7 +38,7 @@
 				<p th:text="${session.loggedInUser.firstName + ' ' + session.loggedInUser.lastName}"></p>
 				
 				<hr/>
-				<form method="get" action="">
+				<form method="get" action="/profileActions">
     				<input type="submit" value="Profile" name="button"/> 
           			<input type="submit" value="Loans" name="button"/> 
            			<input type="submit" value="History" name="button"/>
@@ -65,7 +65,7 @@
 			<div class="main-body">
 			   <div>
         		<h1>Profile</h1>
-        		<p th:text="${buttonClicked}">Username: ${buttonClicked} </p>
+        		<p th:text="${buttonClicked}"> Button </p>
         		<!--   <p>First Name: ${loggedInUser.firstName} </p> --> 
         	   </div>
 			</div>
