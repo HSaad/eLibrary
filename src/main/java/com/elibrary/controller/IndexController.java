@@ -72,6 +72,7 @@ public class IndexController {
     @RequestMapping("/profileActions")
     public String profileActions(Model model, @RequestParam("button") String button) {
     	model.addAttribute("buttonClicked", button);
+    	model.addAttribute("item", new LibraryItem());
     	return "borrowerProfile";
     }
     

@@ -95,6 +95,30 @@
 				</div>
         	   </div>
 
+			   <div th:if="${buttonClicked == 'Add Item'}">
+			   	<h2>Add Library Item</h2>
+        	    <form action="#" th:action="@{/createitem}" th:object="${item}" method="post" id="add-item">
+					<h3>Enter the item's details: </h3>
+					<input placeholder=" Title " type="text" name="title" id="title" th:field="*{title}"/>
+				
+					<textarea rows="4" cols="50" name="description" form="add-item" th:field="*{description}"> Plot Description (Max: 225 characters)</textarea>
+				
+					<input placeholder=" Genre " type="text" name="genre" id="genre" th:field="*{genre}"/>
+					<input placeholder=" Author " type="text" name="author" id="author" th:field="*{creator}"/>
+					<input placeholder=" Publication Year " type="text" name="year" id="year" th:field="*{publicationYear}"/>
+					<input placeholder=" Image Source " type="text" name="imgSrc" id="imgSrc" th:field="*{imgSrc}"/>
+				
+				 	<select name="Type">
+    					<option value="Ebook">Ebook</option>
+   	 					<option value="Audiobook">Audiobook</option>
+    					<option value="Magazine">Magazine</option>
+    					<option value="Video">Video</option>
+  					</select>
+				<input class="signup" type="submit" value="Add Item">
+			  </form>
+        	</div>
+
+
 			</div>
 		</section>
 		
