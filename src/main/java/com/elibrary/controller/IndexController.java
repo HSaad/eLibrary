@@ -86,13 +86,19 @@ public class IndexController {
     
 
     @RequestMapping("/signup")
-    public String createUserForm(Model model) {
+    public String createUserForm(HttpSession session, Model model) {
+    	if(session.getAttribute("loggedInUser") != null) {
+			return "index";
+		}
         model.addAttribute("user", new User());
         return "signup";
     }
     
     @RequestMapping("/signin")
-    public String logInUserForm(Model model) {
+    public String logInUserForm(HttpSession session, Model model) {
+    	if(session.getAttribute("loggedInUser") != null) {
+			return "index";
+		}
         model.addAttribute("user", new User());
         return "signin";
     }
