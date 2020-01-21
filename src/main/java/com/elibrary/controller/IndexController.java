@@ -48,7 +48,16 @@ public class IndexController {
     
     @RequestMapping("/index")
     public String index(Model model) {
-    	//model.setAttribute("loggedInUser", foundUser);
+
+		ArrayList<LibraryItem> libraryCatalogue = (ArrayList<LibraryItem>) itemService.findAll();
+		model.addAttribute("catalogue", libraryCatalogue);
+		
+		ArrayList<LibraryItem> ebooks = (ArrayList<LibraryItem>) itemService.findAllEbooks();
+		model.addAttribute("ebooks", ebooks);
+		
+//		ArrayList<LibraryItem> audiobooks = (ArrayList<LibraryItem>) itemService.findAllAudioBooks();
+//		model.addAttribute("audiobooks", audiobooks);
+		
         return "index";
     }
     

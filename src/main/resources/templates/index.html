@@ -38,11 +38,9 @@
 				
 				<h1> Access to the most content </h1>
 				<p> Borrow eBooks, audiobooks, and more - anywhere, anytime. </p>
-				
-				
-					<a class="landing-buttons" href=""> Sign In</a>
-				
-							
+								
+				<a class="landing-buttons" href="/signin" th:if="${session.loggedInUser == null}"> Sign In</a>
+
 				<a class="landing-buttons" href=""> Browse </a>
 			</div>
 			
@@ -52,8 +50,13 @@
 			
 			<!-- Display Book Lists -->
 			<h2>Must Reads</h2>
-			<div>
-
+			<div th:if="${catalogue != null}">
+  				<div th:each="book : ${catalogue}" class="book" th:unless="${book.index > 3}"> 
+  					<a class="profile" href="">
+					<h3 th:text="${book.title}"><%= item.getTitle() %></h3>
+					<p th:text="${book.creator}"></p><br/> <p th:text="${contact.publicationYear}"></p>
+					</a>
+				</div>
  			</div>
 			
 			<h2>Recommended eBooks </h2>
