@@ -34,7 +34,7 @@
 		<section class="signin-section">
 			<h2>Sign In</h2>
 			
-			<form method="post" th:action="@{/login}" th:object="${user}">
+			<form method="post" th:action="@{/login}" th:object="${loggedInUser}">
 				<input placeholder=" Email address " type="text" name="email" id="email" th:field="*{email}"/>
 				<input placeholder=" Password " type="password" name="pw" id="pw" th:field="*{password}"/>
 				<input class="signin" type="submit" value="Sign In"/>
