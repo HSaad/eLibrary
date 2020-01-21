@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS libitem
 CREATE TABLE IF NOT EXISTS loan
 (
      id SERIAL PRIMARY KEY NOT NULL,
-     item varchar(20),
-     user varchar(100),
+     item_id integer REFERENCES libitem (id),
+     user_id integer REFERENCES cuser (id),
      borrowed_date date,
      returned_date date
 );
