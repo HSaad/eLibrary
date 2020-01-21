@@ -43,7 +43,7 @@
           			<input type="submit" value="Loans" name="button"/> 
            			<input type="submit" value="History" name="button"/>
            		
-           			 	<hr>
+           			 	<hr/>
         				<!-- Librarian / Admin Functionalities --> 
         				<div th:if="${session.loggedInUser.class.simpleName == 'Librarian' || 
         				session.loggedInUser.class.simpleName == 'Admin'}">
@@ -53,7 +53,7 @@
         				</div>
         	
            		     	<div th:if="${session.loggedInUser.class.simpleName == 'Admin'}">
-           		     	<hr>
+           		     	<hr/>
            		     	<!-- Admin Functionalities -->
            		     		<input type="submit" value="Add Librarian" name="button"/>
         					<input type="submit" value="Delete Librarian" name="button"/>
