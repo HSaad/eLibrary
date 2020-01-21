@@ -522,6 +522,7 @@ a.delete-edit:hover {
 #page-container {
 	position:relative;
 	min-height: 100vh;
+	margin-bottom: 30px;
 }
 
 #footer {
