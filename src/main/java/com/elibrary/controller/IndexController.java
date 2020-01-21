@@ -44,6 +44,7 @@ public class IndexController {
     
     @RequestMapping("/index")
     public String index(Model model) {
+    	//model.setAttribute("loggedInUser", foundUser);
         return "index";
     }
     

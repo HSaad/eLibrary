@@ -17,6 +17,10 @@
 					<input placeholder=" Search by title " type="text" name="search" id="search"/>
 					<input class="search-icon" type="submit" value=""/>
 				</form>
+				
+					<a class="sign-in" href="signin.jsp" th:if="${loggedInUser == null}"> Sign In</a>
+					<a class="sign-up" href="signup.jsp" th:if="${loggedInUser == null}"> Sign Up </a>
+				
 			</nav>
 		</header>
 		
