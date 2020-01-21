@@ -25,7 +25,7 @@
 				<div th:if="${session.loggedInUser != null}">
 					<a class="profile" href="profile" th:text="'Welcome ' + ${session.loggedInUser.firstName}"></a>
 				
-					<form method="get" action="logout">
+					<form method="get" action="/logout">
 						<input class="logout" type="submit" value="Sign Out"/>
 					</form>
 				</div>

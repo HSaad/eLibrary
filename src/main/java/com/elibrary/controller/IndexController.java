@@ -149,4 +149,11 @@ public class IndexController {
     	model.addAttribute("searchResults", searchResults);
     	return "search-page";
     }
+    
+    @RequestMapping("/logout")
+    public String logout(Model model, HttpSession session) {
+    	session.removeAttribute("loggedInUser");
+		session.invalidate();
+    	return "index";
+    }
 }
