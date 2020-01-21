@@ -56,10 +56,16 @@ public class IndexController {
     }
     
 
-    @RequestMapping("/createuserform")
+    @RequestMapping("/signup")
     public String createUserForm(Model model) {
         model.addAttribute("user", new User());
         return "signup";
+    }
+    
+    @RequestMapping("/signin")
+    public String logInUserForm(Model model) {
+        //model.addAttribute("user", new User());
+        return "signin";
     }
     
     @RequestMapping("/createitemform")

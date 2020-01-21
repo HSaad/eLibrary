@@ -18,8 +18,8 @@
 					<input class="search-icon" type="submit" value=""/>
 				</form>
 				
-				<a class="sign-in" href="signin.html" th:if="${loggedInUser == null}"> Sign In</a>
-				<a class="sign-up" href="signup.html" th:if="${loggedInUser == null}"> Sign Up </a>
+				<a class="sign-in" href="/signin" th:if="${loggedInUser == null}"> Sign In</a>
+				<a class="sign-up" href="/signup" th:if="${loggedInUser == null}"> Sign Up </a>
 				
 				<div th:if="${loggedInUser != null}">
 					<a class="profile" href="profile" th:text="'Welcome ' + ${loggedInUser.firstName}"></a>
