@@ -15,6 +15,8 @@
 <tr th:each="loan : ${loans}">
     <td></td>
     <td th:text="${loan.id}" ></td>
+    <td th:text="${loan.user.firstName}" ></td>
+    <td th:text="${loan.item.title}" ></td>
 </tr>
 </table>
 </div>
