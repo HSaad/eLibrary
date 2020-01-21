@@ -118,7 +118,10 @@
 			  </form>
         	</div>
 
-
+			<div th:if="${buttonClicked == 'Delete Item' || buttonClicked == 'Edit Item}">
+        		<a class="delete-edit" href="/browse">Search for book to edit or delete</a>
+        	</div>
+     	
 			</div>
 		</section>
 		
