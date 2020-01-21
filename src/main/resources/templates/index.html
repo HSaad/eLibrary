@@ -18,11 +18,11 @@
 					<input class="search-icon" type="submit" value=""/>
 				</form>
 				
-				<a class="sign-in" href="signin.jsp" th:if="${loggedInUser == null}"> Sign In</a>
-				<a class="sign-up" href="signup.jsp" th:if="${loggedInUser == null}"> Sign Up </a>
+				<a class="sign-in" href="signin.html" th:if="${loggedInUser == null}"> Sign In</a>
+				<a class="sign-up" href="signup.html" th:if="${loggedInUser == null}"> Sign Up </a>
 				
 				<div th:if="${loggedInUser != null}">
-					<a class="profile" href="profile"><p>Welcome ${loggedInUser.firstName}</p></a>
+					<a class="profile" href="profile" th:text="'Welcome ' + ${loggedInUser.firstName}"></a>
 				
 					<form method="get" action="logout">
 						<input class="logout" type="submit" value="Sign Out"/>

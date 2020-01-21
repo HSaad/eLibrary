@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Sign In</title>
+    	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    	<link rel="stylesheet" href="../assets/css/bootstrap.css" th:href="@{/assets/css/bootstrap.css}" />
+    	<link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />		
+	</head>
+	<body>
+		<!-- Navigation: Logo, Search Bar, Sign In/Out -->
+		<header>
+			<nav>
+				<a class="logo" href=""> <img width="30px" height="30px" alt="Digital Library Logo" src="styles/ELibraryLogo.png"/> </a> <!-- FIND LOGO -->
+				
+				<!-- Search icon in css -->
+				<form method="get" action="#">
+					<input placeholder=" Search by title " type="text" name="search" id="search"/>
+					<input class="search-icon" type="submit" value=""/>
+				</form>
+				
+				<a class="sign-in" href="signin.html" th:if="${loggedInUser == null}"> Sign In</a>
+				<a class="sign-up" href="signup.html" th:if="${loggedInUser == null}"> Sign Up </a>
+				
+				<div th:if="${loggedInUser != null}">
+					<a class="profile" href="profile" th:text="'Welcome ' + ${loggedInUser.firstName}"></a>
+				
+					<form method="get" action="logout">
+						<input class="logout" type="submit" value="Sign Out"/>
+					</form>
+				</div>
+			</nav>
+		</header>
+		
+		<section class="signin-section">
+			<h2>Sign In</h2>
+			
+			<form method="get" action="login">
+				<input placeholder=" Email address " type="text" name="email" id="email">
+				<input placeholder=" Password " type="password" name="pw" id="pw">
+				<input class="signin" type="submit" value="Sign In">
+			</form>
+			
+			<p> Don't have an E-Library account? <a href="signup.html">Sign up, it's free!</a> </p>
+		</section>
+		
+		<!-- Footer: Company Links -->
+		<footer>
+			<a class="contact" href=""> Contact </a> 
+			<a class="about" href="">About Us</a>
+		</footer>
+		
+	</body>
+</html>
