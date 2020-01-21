@@ -49,22 +49,29 @@
 			<div class="booklist">
 			
 			<!-- Display Book Lists -->
-			<h2>Must Reads</h2>
 			<div th:if="${catalogue != null}">
-  				<div th:each="book,iterStat : ${catalogue}" class="book" th:unless="${iterStat.index > 3}"> 
+				<h2>Must Reads</h2>
+  				<div th:each="book,iterStat : ${catalogue}" class="book" th:unless="${iterStat.index > 4}"> 
   					<a class="profile" href="">
   					<img th:alt="${book.title}" th:src="${book.imgSrc}"/>
 					<h3 th:text="${book.title}"></h3>
-					<p th:text="${book.creator}"></p><br/> <p th:text="${book.publicationYear}"></p>
+					<p th:text="${book.creator}"></p><p th:text="${book.publicationYear}"></p>
 					</a>
 				</div>
  			</div>
 			
 			<h2>Recommended eBooks </h2>
 				
-			<div>
-		
-			</div>
+			<div th:if="${ebooks != null}">
+				<h2>Recommended eBooks </h2>
+  				<div th:each="book,iterStat : ${ebooks}" class="book" th:unless="${iterStat.index > 4}"> 
+  					<a class="profile" href="">
+  					<img th:alt="${book.title}" th:src="${book.imgSrc}"/>
+					<h3 th:text="${book.title}"></h3>
+					<p th:text="${book.creator}"></p><p th:text="${book.publicationYear}"></p>
+					</a>
+				</div>
+ 			</div>
 				
 			<h2>Recommended Audiobooks </h2>
 				
