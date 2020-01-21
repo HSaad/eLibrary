@@ -23,9 +23,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.elibrary.model.AudioBook;
+import com.elibrary.model.Ebook;
 import com.elibrary.model.LibraryItem;
 import com.elibrary.model.Loan;
+import com.elibrary.model.Magazine;
 import com.elibrary.model.User;
+import com.elibrary.model.Video;
 import com.elibrary.service.ILibraryItemService;
 import com.elibrary.service.ILoanService;
 import com.elibrary.service.IUserService;
@@ -170,10 +174,21 @@ public class IndexController {
     }
    
     @RequestMapping(value="/createitem", method=RequestMethod.POST)
-    public String createItem(@ModelAttribute LibraryItem item, Model model) {
-        model.addAttribute("item", item);
-        itemService.create(item);
-        return "home";
+    public String createItem(@ModelAttribute LibraryItem item, Model model, @RequestParam("type") String type) {
+    	if(type == "Ebook") {
+    		Ebook book = (Ebook) item;
+    		itemService.create(book);
+    	}else if (type == "Audiobook") {
+    		AudioBook audiobook = (AudioBook) item;
+    		itemService.create(audiobook);
+    	}else if (type == "Magazine"){
+    		Magazine magazine = (Magazine) item;
+    		itemService.create(magazine);
+    	}else {
+    		Video video = (Video) item;
+    		itemService.create(video);
+    	}
+        return "browse";
     }
 
     @RequestMapping("/items")
