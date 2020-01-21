@@ -115,7 +115,7 @@ public class IndexController {
 			model.addAttribute("loans", loanedItems);
 			model.addAttribute("history", history);
 			
-			return "/index";
+			return "index";
 			//TODO check the type of user and display the appropriate file
 			//go to profile
 		}else {
