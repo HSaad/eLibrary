@@ -78,6 +78,7 @@ public class IndexController {
     public String profileActions(Model model, @RequestParam("button") String button) {
     	model.addAttribute("buttonClicked", button);
     	model.addAttribute("item", new LibraryItem());
+    	model.addAttribute("user", new LibraryItem());
     	return "borrowerProfile";
     }
     
@@ -169,9 +170,8 @@ public class IndexController {
 
     @RequestMapping(value="/createuser", method=RequestMethod.POST)
     public String createUser(@ModelAttribute User user, Model model) {
-        model.addAttribute("user", user);
         userService.create(user);
-        return "result";
+        return "profile";
     }
    
     @RequestMapping(value="/createitem", method=RequestMethod.POST)
@@ -203,7 +203,7 @@ public class IndexController {
     		itemService.create(item);
     	}
     	
-        return "browse";
+        return "profile";
     }
 
     @RequestMapping("/items")

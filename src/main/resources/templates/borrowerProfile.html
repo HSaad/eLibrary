@@ -118,9 +118,26 @@
 			  </form>
         	</div>
 
-			<div th:if="${buttonClicked == 'Delete Item' || buttonClicked == 'Edit Item}">
+			<div th:if="${buttonClicked == 'Delete Item' || buttonClicked == 'Edit Item'}">
         		<a class="delete-edit" href="/browse">Search for book to edit or delete</a>
         	</div>
+        	
+        	<div th:if="${buttonClicked == 'Add Librarian'}">
+			  <form action="#" th:action="@{/createuser}" th:object="${user}" method="post" id="add-item">
+			  	<h3>Enter Librarian details: </h3>
+				<input placeholder=" First Name " type="text" name="firstname" id="firstname" th:field="*{firstName}"/>
+				<input placeholder=" Last Name " type="text" name="lastname" id="lastname" th:field="*{lastName}"/>
+				<input placeholder=" Email address " type="text" name="email" id="email" th:field="*{email}"/>
+				<input placeholder=" Username " type="text" name="username" id="username" th:field="*{username}"/>
+				
+				<h3>Set a password: </h3>
+				<input placeholder=" Password " type="password" name="pw" id="pw" th:field="*{password}"/>
+						
+				<input class="signup" type="submit" value="Add Librarian"/>
+			   </form>
+        	</div>
+        	
+ 
      	
 			</div>
 		</section>
