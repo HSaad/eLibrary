@@ -67,7 +67,7 @@ public class IndexController {
     
     @RequestMapping("/signin")
     public String logInUserForm(Model model) {
-        model.addAttribute("loggedInUser", new User());
+        model.addAttribute("user", new User());
         return "signin";
     }
     
