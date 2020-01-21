@@ -51,7 +51,7 @@
 			<!-- Display Book Lists -->
 			<h2>Must Reads</h2>
 			<div th:if="${catalogue != null}">
-  				<div th:each="book : ${catalogue}" class="book" th:unless="${book.index > 3}"> 
+  				<div th:each="book,iterStat : ${catalogue}" class="book" th:unless="${iterStat.index > 3}"> 
   					<a class="profile" href="">
 					<h3 th:text="${book.title}"></h3>
 					<p th:text="${book.creator}"></p><br/> <p th:text="${contact.publicationYear}"></p>
