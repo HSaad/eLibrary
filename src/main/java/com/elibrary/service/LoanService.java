@@ -57,4 +57,10 @@ public class LoanService implements ILoanService{
 		List<Loan> loans = (List<Loan>) repository.findAllCurrentLoans();
 		return loans;
 	}
+	
+	@Override
+	public Loan create(Loan loan) {
+		repository.save(loan);
+		return loan;
+	}
 }

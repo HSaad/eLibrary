@@ -44,7 +44,8 @@ public class LibraryItemService implements ILibraryItemService{
 		return item;
 	}
 	
-	//Creates new user 
+	//Creates new library item
+	@Override
 	public LibraryItem create(LibraryItem item) {
 		repository.save(item);
 		return item;

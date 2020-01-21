@@ -14,4 +14,5 @@ public interface ILoanService {
 	List<Loan> findAllCurrentLoansByUser(User user);
 	List<Loan> findAllCurrentLoansByItem(LibraryItem item);
 	List<Loan> findAllCurrentLoans();
+	Loan create(Loan loan);	
 }

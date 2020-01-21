@@ -44,7 +44,8 @@ public class UserService implements IUserService{
 		return user;
 	}
 	
-	//Creates new user 
+	//Creates new user
+	@Override
 	public User create(User user) {
 		repository.save(user);
 		return user;
