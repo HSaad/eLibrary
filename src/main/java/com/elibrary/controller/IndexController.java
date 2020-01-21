@@ -73,7 +73,7 @@ public class IndexController {
     }
     
     @RequestMapping(value="/login", method=RequestMethod.POST)
-    public String logInUser(HttpServletRequest request, @ModelAttribute User user, Model model) {
+    public String logInUser(HttpSession session, @ModelAttribute User user, Model model) {
     	String email = user.getEmail();
     	String password = user.getPassword();
 		User foundUser = userService.findByEmail(email);
@@ -86,7 +86,7 @@ public class IndexController {
 			List<Loan> loanedItems = loanService.findAllCurrentLoansByUser(foundUser);
 			List<Loan> history = loanService.findByUser(foundUser);
 			
-			request.getSession().setAttribute("loggedInUser", foundUser);
+			session.setAttribute("loggedInUser", foundUser);
 			//model.addAttribute("loggedInUser", foundUser);
 			model.addAttribute("loans", loanedItems);
 			model.addAttribute("history", history);
