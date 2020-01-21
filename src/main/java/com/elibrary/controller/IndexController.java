@@ -97,7 +97,6 @@ public class IndexController {
 			List<Loan> history = loanService.findByUser(foundUser);
 			
 			session.setAttribute("loggedInUser", foundUser);
-			//model.addAttribute("loggedInUser", foundUser);
 			model.addAttribute("loans", loanedItems);
 			model.addAttribute("history", history);
 			
@@ -146,7 +145,8 @@ public class IndexController {
     
     @RequestMapping(value="/searched", method=RequestMethod.GET)
     public String searchItems(Model model, @RequestParam("search") String title) {
-    	model.addAttribute("title", title);
-    	return "result";
+    	List<LibraryItem> searchResults = itemService.findByTitle(title);
+    	model.addAttribute("item", searchResults);
+    	return "item";
     }
 }
