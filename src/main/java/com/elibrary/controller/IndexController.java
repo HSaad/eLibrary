@@ -21,6 +21,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.elibrary.model.LibraryItem;
 import com.elibrary.model.Loan;
@@ -141,5 +142,11 @@ public class IndexController {
     	List<Loan> loans = (List<Loan>) loanService.findAll();
     	model.addAttribute("loans", loans);
     	return "loan";
+    }
+    
+    @RequestMapping(value="/searched", method=RequestMethod.GET)
+    public String searchItems(Model model, @RequestParam("search") String title) {
+    	model.addAttribute("title", title);
+    	return "result";
     }
 }
