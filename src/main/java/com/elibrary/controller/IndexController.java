@@ -51,6 +51,11 @@ public class IndexController {
     public String contact(Model model) {
         return "contact";
     }
+
+    @RequestMapping("/profile")
+    public String profile(Model model) {
+    	return "borrowerProfile";
+    }
     
     @RequestMapping("/about")
     public String about(Model model) {
@@ -88,6 +93,7 @@ public class IndexController {
     @RequestMapping("/signup")
     public String createUserForm(HttpSession session, Model model) {
     	if(session.getAttribute("loggedInUser") != null) {
+    		//change to profile
 			return "index";
 		}
         model.addAttribute("user", new User());
@@ -97,6 +103,7 @@ public class IndexController {
     @RequestMapping("/signin")
     public String logInUserForm(HttpSession session, Model model) {
     	if(session.getAttribute("loggedInUser") != null) {
+    		//change to profile
 			return "index";
 		}
         model.addAttribute("user", new User());
@@ -121,7 +128,7 @@ public class IndexController {
 			model.addAttribute("loans", loanedItems);
 			model.addAttribute("history", history);
 			
-			return "index";
+			return "borrowerProfile";
 			//TODO check the type of user and display the appropriate file
 			//go to profile
 		}else {
