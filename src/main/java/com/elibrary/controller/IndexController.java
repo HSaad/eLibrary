@@ -52,6 +52,11 @@ public class IndexController {
         return "contact";
     }
     
+    @RequestMapping("/about")
+    public String about(Model model) {
+        return "about";
+    }
+    
     @RequestMapping("/index")
     public String index(Model model) {
 
