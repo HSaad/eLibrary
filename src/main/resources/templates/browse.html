@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -36,8 +35,8 @@
 		<section>
 			<h2></h2>
 			<!-- Display Book Lists -->
-			<div th:if="${session.catalogue != null}">
-  				<div th:each="item : ${session.catalogue}" class="book""> 
+			<div th:if="${session.=catalogue != null}">
+  				<div th:each="item : ${session.catalogue}" class="book"> 
   					<a class="profile" href="">
   					<img th:alt="${item.title}" th:src="${item.imgSrc}"/>
 					<h3 th:text="${item.title}"></h3>
