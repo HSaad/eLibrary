@@ -174,7 +174,7 @@ public class IndexController {
     }
    
     @RequestMapping(value="/createitem", method=RequestMethod.POST)
-    public String createItem(@ModelAttribute LibraryItem item, Model model, @RequestParam("type") String type) {
+    public String createItem(@ModelAttribute LibraryItem item, Model model, @RequestParam("classType") String type) {
     	if(type == "Ebook") {
     		Ebook book = (Ebook) item;
     		itemService.create(book);
