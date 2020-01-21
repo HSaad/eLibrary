@@ -63,10 +63,24 @@
 			
 			
 			<div class="main-body">
-			   <div>
-        		<h1>Profile</h1>
-        		<p th:text="${buttonClicked}"> Button </p>
-        		<!--   <p>First Name: ${loggedInUser.firstName} </p> --> 
+			   <div th:if="${buttonClicked == 'Profile' || buttonClicked == null}">
+        			<h1>Profile</h1>
+        			<p th:text="'Username: ' + ${session.loggedInUser.username}"></p>
+        			<p th:text="'First Name: ' + ${session.loggedInUser.firstName}"></p>
+        			<p th:text="'Last Name: ' + ${session.loggedInUser.lastName}"></p>
+        			<p th:text="'Email: ' + ${session.loggedInUser.email}"></p>
+        	   </div>
+        	   
+        	   <div th:if="${buttonClicked == 'Loans'}">
+        	   	<p th:if="${loans == null}"> <br/> <br/> No loans currently out </p>
+				<div th:if="${loans != null}" class="book" th:each="loan : ${loans}"> 
+					<a class="profile" href="">
+  					<img th:alt="${loan.item.title}" th:src="${loan.item.imgSrc}"/>
+					<h3 th:text="${loan.item.title}"></h3>
+					<p th:text="${loan.item.creator}"></p><p th:text="${loan.item.publicationYear}"></p>
+					<p th:text="Due Date: ' + ${loan.borrowedDate}"></p>
+					</a>
+				</div>
         	   </div>
 			</div>
 		</section>
