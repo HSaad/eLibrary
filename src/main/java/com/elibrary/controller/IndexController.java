@@ -73,8 +73,10 @@ public class IndexController {
     
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String logInUser(@ModelAttribute User user, Model model) {
-    	User foundUser = userService.findByEmail(user.getEmail());
-    	model.addAttribute("user", foundUser);
+    	String email = user.getEmail();
+    	//User foundUser = userService.findByEmail(user.getEmail());
+    	model.addAttribute("email", email);
+    	model.addAttribute("user", user);
     	return "result";
 //		User foundUser = userService.findByEmail(user.getEmail());
 //		
