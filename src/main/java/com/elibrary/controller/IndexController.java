@@ -146,7 +146,7 @@ public class IndexController {
     @RequestMapping(value="/searched", method=RequestMethod.GET)
     public String searchItems(Model model, @RequestParam("search") String title) {
     	List<LibraryItem> searchResults = itemService.findByTitle(title);
-    	model.addAttribute("item", searchResults);
+    	model.addAttribute("items", searchResults);
     	return "item";
     }
 }
