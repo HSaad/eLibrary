@@ -141,8 +141,8 @@
        		<div th:if="${buttonClicked == 'Delete Librarian'}">
         	  <br/>
         	  <h3>Librarians: </h3><br/>
-			  <p th:if="${librarians == null}"> <br/> No librarians currently </p>
-			  <div th:if="${librarians != null}" class="librarian-info" th:each="librarian : ${librarians}"> 
+			  <p th:if="${session.librarians == null}"> <br/> No librarians currently </p>
+			  <div th:if="${librarians != null}" class="librarian-info" th:each="session.librarian : ${librarians}"> 
 				<p th:text="'Username: ' + ${librarian.username}" ></p>
 				<p th:text="'First Name: ' + ${librarian.firstName}"></p>
 				<p th:text="'Last Name: ' + ${librarian.lastName}"></p>
