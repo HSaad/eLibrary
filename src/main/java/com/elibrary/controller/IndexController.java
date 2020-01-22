@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.elibrary.model.AudioBook;
 import com.elibrary.model.Ebook;
+import com.elibrary.model.Librarian;
 import com.elibrary.model.LibraryItem;
 import com.elibrary.model.Loan;
 import com.elibrary.model.Magazine;
@@ -171,7 +172,7 @@ public class IndexController {
     @RequestMapping(value="/createuser", method=RequestMethod.POST)
     public String createUser(@ModelAttribute User user, Model model) {
         userService.create(user);
-        return "profile";
+        return "borrowerProfile";
     }
    
     @RequestMapping(value="/createitem", method=RequestMethod.POST)
