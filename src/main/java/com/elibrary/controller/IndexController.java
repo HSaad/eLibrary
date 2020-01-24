@@ -263,18 +263,14 @@ public class IndexController {
     
     @RequestMapping(value="/borrow", method=RequestMethod.GET)
     public String borrow(HttpSession session, Model model, @RequestParam("id") String id) {	
+    	User user = (User) session.getAttribute("loggedInUser");
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
-
-		model.addAttribute("item", item);
-		return "result";
-//			item.setAvailable(false);
-//			lidao.update(item);
-//			
-//			Loan loan = new Loan(item, user, LocalDate.now(), null);
-//			ldao.create(loan);
-//		
-//			RequestDispatcher rd = request.getRequestDispatcher("profile"); //forward to borrowerProfile
-//			rd.forward(request, response);	
+		item.setAvailable(false);
+		//update item to false in db
+//		lidao.update(item);
+		Loan loan = new Loan(item, user, LocalDate.now(), null);
+		loanService.create(loan);
 		
+		return "borrowerProfile";	
     }
 }
