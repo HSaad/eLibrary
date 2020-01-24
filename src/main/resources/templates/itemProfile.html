@@ -40,7 +40,6 @@
 				<p th:text="${item.creator}"></p><br/><p th:text="'(' + ${item.publicationYear} + ')'"></p>
 				<br/> <p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
 				<p th:text="${item.description}"></p>
-			</div>
 			
 			<form th:if="${item.available}" method="get" action="">
     			<input type="submit" value="Borrow" name="button"/> 
@@ -60,6 +59,7 @@
   					</form>
   				</div>
   			</div>
+  		</div>
 				
 		</section>
 		
