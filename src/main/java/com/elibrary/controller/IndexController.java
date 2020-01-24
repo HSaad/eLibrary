@@ -110,7 +110,7 @@ public class IndexController {
     
     @RequestMapping("/users")
     public String findAllOrderedByNameDescending(Model model) {
-    	List<User> users = (List<User>) userService.findAll();
+    	List<User> users = (List<User>) userService.findAllLibrarians();
     	model.addAttribute("users", users);
     	return "user";
     }
