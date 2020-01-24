@@ -453,7 +453,7 @@ input.signin , input.signup{
 .book-profile input {
 	float: left;
 	width: 13%;
-	margin-top: 0;
+	margin-top: 10px;
 	margin-left: 15%;
 	margin-right: 50%;
 	margin-bottom: 10px;

@@ -39,9 +39,10 @@
 				<h3 th:text="${item.title}"></h3>
 				<p th:text="${item.creator}"></p><p th:text="'(' + ${item.publicationYear} + ')'"></p>
 				<p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
-				<p th:text="${item.description}"></p> <br/>
+				<p th:text="${item.description}"></p>
 			
-			<form th:if="${item.available}" method="get" th:action="@{'/borrow?itemID=' + ${item.id}}">
+			<form th:if="${item.available}" method="post" th:action="/borrow">
+				<input type="hidden" name="itemId" th:field="${item.id}"/>
     			<input type="submit" value="Borrow" name="button"/> 
   			</form>
   			

@@ -261,8 +261,8 @@ public class IndexController {
         return "itemProfile";
     }
     
-    @RequestMapping(value="/borrow", method=RequestMethod.GET)
-    public String borrow(HttpSession session, Model model, @RequestParam("itemID") String id) {	
+    @RequestMapping(value="/borrow", method=RequestMethod.POST)
+    public String borrow(HttpSession session, Model model, @RequestParam("itemId") String id) {	
 		User user = (User) session.getAttribute("loggedInUser");
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
 		
