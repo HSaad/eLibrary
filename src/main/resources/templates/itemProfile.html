@@ -59,6 +59,12 @@
   					</form>
   				</div>
   			</div>
+  		
+			<div th:if="${alertMsg != null}" th:with="msg=${alertMsg}">
+				<script type="text/javascript">
+   					 alert(msg);
+				</script>				
+			</div>
   		</div>
 				
 		</section>
