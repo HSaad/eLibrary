@@ -262,7 +262,7 @@ public class IndexController {
     }
     
     @RequestMapping(value="/borrow", method=RequestMethod.GET)
-    public String borrow(HttpSession session, Model model, @RequestParam("itemId") String id) {	
+    public String borrow(HttpSession session, Model model, @RequestParam("id") String id) {	
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
 
 		model.addAttribute("item", item);

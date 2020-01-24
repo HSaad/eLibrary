@@ -42,8 +42,8 @@
 				<p th:text="${item.description}"></p>
 			
 			<form th:if="${item.available and session.loggedInUser != null}" method="get" action="/borrow">
-				<input type="hidden" name="itemId" th:field="${item.id}"/>
-    			<input type="submit" value="" name="button"/> 
+				<input type="hidden" name="id" th:field="${item.id}"/>
+    			<input type="submit" value="Borrow" name="button"/> 
   			</form>
   			
   			<form th:if="${!item.available}" method="get" action="">
