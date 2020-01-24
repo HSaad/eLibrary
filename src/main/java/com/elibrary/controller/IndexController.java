@@ -149,14 +149,14 @@ public class IndexController {
 		}else if(password != null && password.equals(foundUser.getPassword())) {
 			List<Loan> loanedItems = loanService.findAllCurrentLoansByUser(foundUser);
 			List<Loan> history = loanService.findByUser(foundUser);
+			List<User> librarians = userService.findAllLibrarians();
 			
+			session.setAttribute("librarians", librarians);
 			session.setAttribute("loggedInUser", foundUser);
-			model.addAttribute("loans", loanedItems);
-			model.addAttribute("history", history);
+			session.setAttribute("loans", loanedItems);
+			session.setAttribute("history", history);
 			
-			return "borrowerProfile";
-			//TODO check the type of user and display the appropriate file
-			//go to profile
+			return "profile";
 		}else {
 			 //redirect back to signin //display error msg for password (wrong password)
 			return "signin";
