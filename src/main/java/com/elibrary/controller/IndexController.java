@@ -258,11 +258,27 @@ public class IndexController {
     	Long itemId = Long.parseLong(id);
     	LibraryItem item = itemService.findByID(itemId);
     	model.addAttribute("item", item);
-    	
-    	//userService.deleteById(userId);
-    	//List<User> librarians = userService.findAllLibrarians();
-		//request.getSession().setAttribute("librarians", librarians);
-    	//String referer = request.getHeader("Referer");
         return "itemProfile";
+    }
+    
+    @RequestMapping(value="/borrow", method=RequestMethod.GET)
+    public String borrow(HttpSession session, Model model, @RequestParam("itemID") String id) {	
+		User user = (User) session.getAttribute("loggedInUser");
+		LibraryItem item = itemService.findByID(Long.parseLong(id));
+		
+		if(user == null) {
+			return "signin";
+		}else {
+			model.addAttribute("item", item);
+			return "result";
+//			item.setAvailable(false);
+//			lidao.update(item);
+//			
+//			Loan loan = new Loan(item, user, LocalDate.now(), null);
+//			ldao.create(loan);
+//		
+//			RequestDispatcher rd = request.getRequestDispatcher("profile"); //forward to borrowerProfile
+//			rd.forward(request, response);	
+		}
     }
 }

@@ -37,11 +37,11 @@
 			<div class="book-profile"> 
 				<img th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/><br/>
 				<h3 th:text="${item.title}"></h3>
-				<p th:text="${item.creator}"></p><br/><p th:text="'(' + ${item.publicationYear} + ')'"></p>
-				<br/> <p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
+				<p th:text="${item.creator}"></p><p th:text="'(' + ${item.publicationYear} + ')'"></p>
+				<p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
 				<p th:text="${item.description}"></p>
 			
-			<form th:if="${item.available}" method="get" action="">
+			<form th:if="${item.available}" method="get" th:action="@{'/borrow?itemID=' + ${item.id}}">
     			<input type="submit" value="Borrow" name="button"/> 
   			</form>
   			
