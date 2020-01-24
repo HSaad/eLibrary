@@ -256,7 +256,9 @@ public class IndexController {
     @RequestMapping(value="/itemProfile", method=RequestMethod.GET)
     public String itemProfile(HttpServletRequest request, Model model, @RequestParam("itemID") String id) {
     	Long itemId = Long.parseLong(id);
-    	model.addAttribute("id", itemId);
+    	LibraryItem item = itemService.findByID(itemId);
+    	model.addAttribute("item", item);
+    	
     	//userService.deleteById(userId);
     	//List<User> librarians = userService.findAllLibrarians();
 		//request.getSession().setAttribute("librarians", librarians);
