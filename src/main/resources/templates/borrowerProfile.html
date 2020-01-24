@@ -140,13 +140,18 @@
        		
        		<div th:if="${buttonClicked == 'Delete Librarian'}">
         	  <br/>
-        	  <h3>Librarians: </h3><br/>
 			  <p th:if="${session.librarians == null}"> <br/> No librarians currently </p>
+			  <h3 th:if="${session.librarians != null}"><br/>Librarians: <br/></h3>
 			  <div th:if="${session.librarians != null}" class="librarian-info" th:each="librarian : ${session.librarians}"> 
 				<p th:text="'Username: ' + ${librarian.username}" ></p>
 				<p th:text="'First Name: ' + ${librarian.firstName}"></p>
 				<p th:text="'Last Name: ' + ${librarian.lastName}"></p>
 				<p th:text="'Email: ' + ${librarian.email}"></p>
+				<!-- Add delete button -->
+        		<form method="get" action="">
+        			<input type="hidden" name="userID" value="">
+        			<input class="signup" type="submit" value=" Delete " name="button" onclick="return confirm('Are you sure you want to delete?')">
+        		</form>
 			  </div>
         	</div> 
         	
