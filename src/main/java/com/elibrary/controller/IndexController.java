@@ -130,7 +130,8 @@ public class IndexController {
     public String deleteUser(HttpServletRequest request, Model model, @RequestParam("user") String id) {
     	Long userId = Long.parseLong(id);
     	userService.deleteById(userId);
-    	//return "borrowerProfile";
+    	List<User> librarians = userService.findAllLibrarians();
+		request.getSession().setAttribute("librarians", librarians);
     	String referer = request.getHeader("Referer");
         return "redirect:"+ referer;
     }
