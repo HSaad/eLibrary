@@ -127,10 +127,10 @@ public class IndexController {
     }
     
     @RequestMapping(value="/deleteuser", method=RequestMethod.POST)
-    public void deleteUser(Model model, @RequestParam("user") String id) {
+    public String deleteUser(Model model, @RequestParam("user") String id) {
     	Long userId = Long.parseLong(id);
     	userService.deleteById(userId);
-    	//delete foundUser;
+    	return "index";
     	
     }
     
