@@ -149,7 +149,7 @@
 				<p th:text="'Email: ' + ${librarian.email}"></p>
 				<br/>
 				<!-- Add delete button -->
-        		<form action="#" th:action="@{/deleteuser}" method="get">
+        		<form action="#" th:action="@{/deleteuser}" method="post">
         			<input type="hidden" name="user" th:value="${librarian.id}"/>
         			<input class="signup" type="submit" value=" Delete " name="button" onclick="return confirm('Are you sure you want to delete?')"/>
         		</form>
