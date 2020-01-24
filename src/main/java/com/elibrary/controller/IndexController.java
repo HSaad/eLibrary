@@ -184,6 +184,12 @@ public class IndexController {
         userService.create(user);
         return "borrowerProfile";
     }
+    
+    @RequestMapping(value="/createlibrarian", method=RequestMethod.POST)
+    public String createLibrarian(@ModelAttribute Librarian librarian, Model model) {
+        userService.create(librarian);
+        return "borrowerProfile";
+    }
    
     @RequestMapping(value="/createitem", method=RequestMethod.POST)
     public String createItem(@ModelAttribute LibraryItem item, Model model, @RequestParam("classType") String type) {
