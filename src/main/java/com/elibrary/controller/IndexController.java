@@ -253,7 +253,7 @@ public class IndexController {
     	return "index";
     }
     
-    @RequestMapping(value="/itemProfile", method=RequestMethod.POST)
+    @RequestMapping(value="/itemProfile", method=RequestMethod.GET)
     public String itemProfile(HttpServletRequest request, Model model, @RequestParam("itemID") String id) {
     	Long itemId = Long.parseLong(id);
     	model.addAttribute("id", itemId);
