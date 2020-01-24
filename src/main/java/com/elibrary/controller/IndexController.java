@@ -186,8 +186,10 @@ public class IndexController {
     }
     
     @RequestMapping(value="/createlibrarian", method=RequestMethod.POST)
-    public String createLibrarian(@ModelAttribute Librarian librarian, Model model) {
+    public String createLibrarian(HttpSession session, @ModelAttribute Librarian librarian, Model model) {
         userService.create(librarian);
+        List<User> librarians = userService.findAllLibrarians();
+		session.setAttribute("librarians", librarians);
         return "borrowerProfile";
     }
    
