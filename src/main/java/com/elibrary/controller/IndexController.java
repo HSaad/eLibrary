@@ -69,7 +69,7 @@ public class IndexController {
 		List<Loan> history = loanService.findByUser(loggedInUser);
 		session.setAttribute("history", history);
 		
-		ArrayList<User> librarians = (ArrayList<User>) userService.findAllLibrarians();
+		List<User> librarians = userService.findAllLibrarians();
 		session.setAttribute("librarians", librarians);
 	
     	return "borrowerProfile";
