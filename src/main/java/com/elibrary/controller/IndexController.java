@@ -156,7 +156,7 @@ public class IndexController {
 			session.setAttribute("loans", loanedItems);
 			session.setAttribute("history", history);
 			
-			return "profile";
+			return "borrowerProfile";
 		}else {
 			 //redirect back to signin //display error msg for password (wrong password)
 			return "signin";
