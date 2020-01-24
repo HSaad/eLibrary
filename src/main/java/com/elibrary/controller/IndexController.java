@@ -261,16 +261,12 @@ public class IndexController {
         return "itemProfile";
     }
     
-    @RequestMapping(value="/borrow", method=RequestMethod.POST)
+    @RequestMapping(value="/borrow", method=RequestMethod.GET)
     public String borrow(HttpSession session, Model model, @RequestParam("itemId") String id) {	
-		User user = (User) session.getAttribute("loggedInUser");
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
-		
-		if(user == null) {
-			return "signin";
-		}else {
-			model.addAttribute("item", item);
-			return "result";
+
+		model.addAttribute("item", item);
+		return "result";
 //			item.setAvailable(false);
 //			lidao.update(item);
 //			
@@ -279,6 +275,6 @@ public class IndexController {
 //		
 //			RequestDispatcher rd = request.getRequestDispatcher("profile"); //forward to borrowerProfile
 //			rd.forward(request, response);	
-		}
+		
     }
 }
