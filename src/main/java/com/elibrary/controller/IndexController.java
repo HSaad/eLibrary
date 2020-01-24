@@ -126,6 +126,13 @@ public class IndexController {
         return "signup";
     }
     
+    @RequestMapping(value="/deleteuser", method=RequestMethod.POST)
+    public String deleteUser(@ModelAttribute User user, Model model) {
+//    	User foundUser
+//        userService.create(user);
+        return "index";
+    }
+    
     @RequestMapping("/signin")
     public String logInUserForm(HttpSession session, Model model) {
     	if(session.getAttribute("loggedInUser") != null) {
