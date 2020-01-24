@@ -35,13 +35,32 @@
 		<section>
 			<br/> 
 			<div class="book-profile"> 
-				<img th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/>
-				<h3 th:text="${item.title}"></h3><br/>
+				<img th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/><br/>
+				<h3 th:text="${item.title}"></h3>
 				<p th:text="${item.creator}"></p><br/><p th:text="'(' + ${item.publicationYear} + ')'"></p>
 				<br/> <p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
 				<p th:text="${item.description}"></p>
 			</div>
 			
+			<form th:if="${item.available}" method="get" action="">
+    			<input type="submit" value="Borrow" name="button"> 
+  			</form>
+  			
+  			<form th:if="${!item.available}" method="get" action="">
+    			<br/> Sorry, this item is currently unavailable
+  			</form>
+  			
+  			<div th:if="${session.loggedInUser != null}">
+  				<div th:if="${session.loggedInUser.class.simpleName == 'Admin' ||
+  						session.loggedInUser.class.simpleName == 'Librarian'}">
+  					<form class="librarian-functions" method="get" action="">
+						<input type="submit" value="Edit" name="button">
+    					<!--  <input type="submit" value="Delete" name="button"> -->
+    					<input type="submit" value="Delete" name="button" onclick="return confirm('Are you sure you want to delete?')">
+  					</form>
+  				</div>
+  			</div>
+				
 		</section>
 		
 		<!-- Footer: Company Links -->
