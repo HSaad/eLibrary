@@ -252,4 +252,15 @@ public class IndexController {
 		session.invalidate();
     	return "index";
     }
+    
+    @RequestMapping(value="/itemProfile", method=RequestMethod.POST)
+    public String itemProfile(HttpServletRequest request, Model model, @RequestParam("itemID") String id) {
+    	Long itemId = Long.parseLong(id);
+    	model.addAttribute("id", itemId);
+    	//userService.deleteById(userId);
+    	//List<User> librarians = userService.findAllLibrarians();
+		//request.getSession().setAttribute("librarians", librarians);
+    	//String referer = request.getHeader("Referer");
+        return "itemProfile";
+    }
 }
