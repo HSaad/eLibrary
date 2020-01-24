@@ -33,9 +33,9 @@
 		</header>
 		
 		<section>
-			<br/>
+			<br/> 
 			<div class="book-profile"> 
-				<img th:alt="${item.title}" th:src="${item.imgSrc}"/>
+				<img th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/>
 				<h3 th:text="${item.title}"></h3><br/>
 				<p th:text="${item.creator}"></p><br/><p th:text="'(' + ${item.publicationYear} + ')'"></p>
 				<br/> <p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
