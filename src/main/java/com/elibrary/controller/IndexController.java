@@ -127,11 +127,12 @@ public class IndexController {
     }
     
     @RequestMapping(value="/deleteuser", method=RequestMethod.POST)
-    public String deleteUser(Model model, @RequestParam("user") String id) {
+    public String deleteUser(HttpServletRequest request, Model model, @RequestParam("user") String id) {
     	Long userId = Long.parseLong(id);
     	userService.deleteById(userId);
-    	return "index";
-    	
+    	//return "borrowerProfile";
+    	String referer = request.getHeader("Referer");
+        return "redirect:"+ referer;
     }
     
     @RequestMapping("/signin")
