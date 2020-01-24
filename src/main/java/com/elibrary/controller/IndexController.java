@@ -79,7 +79,7 @@ public class IndexController {
     public String profileActions(Model model, @RequestParam("button") String button) {
     	model.addAttribute("buttonClicked", button);
     	model.addAttribute("item", new LibraryItem());
-    	model.addAttribute("user", new User());
+    	model.addAttribute("librarian", new Librarian());
     	return "borrowerProfile";
     }
     

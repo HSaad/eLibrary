@@ -124,7 +124,7 @@
         	
         	<div th:if="${buttonClicked == 'Add Librarian'}">
         	  <br/>
-			  <form action="#" th:action="@{/createuser}" th:object="${user}" method="post" id="add-item">
+			  <form action="#" th:action="@{/createuser}" th:object="${librarian}" method="post" id="add-item">
 			  	<h3>Enter Librarian details: </h3>
 				<input placeholder=" First Name " type="text" name="firstname" id="firstname" th:field="*{firstName}"/>
 				<input placeholder=" Last Name " type="text" name="lastname" id="lastname" th:field="*{lastName}"/>
