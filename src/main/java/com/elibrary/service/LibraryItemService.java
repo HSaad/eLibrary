@@ -87,4 +87,14 @@ public class LibraryItemService implements ILibraryItemService{
 		return items;
 	}
 
+	@Override
+	public void deleteById(Long id) {
+		repository.delete(id);
+	}
+
+	@Override
+	public void delete(LibraryItem item) {
+		repository.delete(item);
+	}
+
 }

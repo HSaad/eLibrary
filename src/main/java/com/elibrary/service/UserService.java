@@ -74,4 +74,14 @@ public class UserService implements IUserService{
 		List<User> users = (List<User>) repository.findByType(type);
 		return users;
 	}
+	
+	@Override
+	public void deleteById(Long id) {
+		repository.delete(id);
+	}
+	
+	@Override
+	public void delete(User user) {
+		repository.delete(user);
+	}
 }

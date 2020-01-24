@@ -127,14 +127,11 @@ public class IndexController {
     }
     
     @RequestMapping(value="/deleteuser", method=RequestMethod.POST)
-    public String deleteUser(Model model, @RequestParam("user") String id) {
+    public void deleteUser(Model model, @RequestParam("user") String id) {
     	Long userId = Long.parseLong(id);
-    	User foundUser = userService.findByID(userId);
+    	userService.deleteById(userId);
+    	//delete foundUser;
     	
-    	model.addAttribute("id", id);
-    	model.addAttribute("user", foundUser);
-    	
-        return "result";
     }
     
     @RequestMapping("/signin")

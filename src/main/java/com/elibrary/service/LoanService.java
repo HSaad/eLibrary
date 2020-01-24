@@ -63,4 +63,14 @@ public class LoanService implements ILoanService{
 		repository.save(loan);
 		return loan;
 	}
+
+	@Override
+	public void deleteById(Long id) {
+		repository.delete(id);
+	}
+
+	@Override
+	public void delete(Loan loan) {
+		repository.delete(loan);	
+	}
 }

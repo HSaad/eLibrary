@@ -15,4 +15,6 @@ public interface IUserService {
 	List<User> findAllLibrarians();
 	List<User> findByType(Class type);
 	User findByID(Long id);
+	void deleteById(Long id);
+	void delete(User user);
 }

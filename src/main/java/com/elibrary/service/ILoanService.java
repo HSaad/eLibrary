@@ -15,4 +15,6 @@ public interface ILoanService {
 	List<Loan> findAllCurrentLoansByItem(LibraryItem item);
 	List<Loan> findAllCurrentLoans();
 	Loan create(Loan loan);	
+	void deleteById(Long id);
+	void delete(Loan loan);
 }

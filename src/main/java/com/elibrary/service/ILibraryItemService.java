@@ -18,4 +18,6 @@ public interface ILibraryItemService {
 	List<LibraryItem> findAllVideos();
 	List<LibraryItem> findAllEbooks();
 	List<LibraryItem> findByType(Class type);
+	void deleteById(Long id);
+	void delete(LibraryItem item);
 }
