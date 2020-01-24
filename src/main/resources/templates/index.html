@@ -49,13 +49,11 @@
 			
 			<div class="booklist">
 			
-			<a th:href="@{/category/edit/{id}(id=${category.idCategory})}">
-			
 			<!-- Display Book Lists -->
 			<div th:if="${session.catalogue != null}">
 				<h2>Must Reads</h2>
   				<div th:each="book,iterStat : ${session.catalogue}" class="book" th:unless="${iterStat.index > 4}"> 
-  					<a class="profile" th:href="">
+  					<a class="profile" th:href="@{/itemProfile?{itemID}(id=${book.id})}">
   					<img th:alt="${book.title}" th:src="${book.imgSrc}"/>
 					<h3 th:text="${book.title}"></h3>
 					<p th:text="${book.creator}"></p><p th:text="${book.publicationYear}"></p>
