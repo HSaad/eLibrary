@@ -41,7 +41,7 @@
 				<p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
 				<p th:text="${item.description}"></p>
 			
-			<form th:if="${item.available}" method="post" action="/borrow">
+			<form th:if="${item.available and session.loggedInUser != null}" method="post" action="/borrow">
 				<input type="hidden" name="itemId" th:field="${item.id}"/>
     			<input type="submit" value="Borrow" name="button"/> 
   			</form>
