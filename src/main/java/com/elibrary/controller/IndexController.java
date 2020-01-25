@@ -288,7 +288,7 @@ public class IndexController {
 		foundItem.setImgSrc(item.getImgSrc());	
 		
 		itemService.update(foundItem);
-		return "result";	
+		return "index";	
     }
     
     
