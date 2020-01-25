@@ -264,6 +264,9 @@ public class IndexController {
     @RequestMapping(value="/borrow", method=RequestMethod.GET)
     public String borrow(HttpSession session, Model model, @RequestParam("id") String id) {	
     	User user = (User) session.getAttribute("loggedInUser");
+    	if (user == null) {
+    		return "signin";
+    	}
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
 		item.setAvailable(false);
 		Loan loan = new Loan(item, user, LocalDate.now(), null);

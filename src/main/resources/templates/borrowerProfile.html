@@ -74,7 +74,7 @@
         	   <div th:if="${buttonClicked == 'Loans'}">
         	   	<p th:if="${session.loans == null}"> <br/> <br/> No loans currently out </p>
 				<div th:if="${session.loans != null}" class="book" th:each="loan : ${session.loans}"> 
-					<a class="profile" href="">
+					<a class="profile" th:href="@{'/itemProfile?itemID=' + ${loan.item.id}}"">
   					<img th:alt="${loan.item.title}" th:src="${loan.item.imgSrc}"/>
 					<h3 th:text="${loan.item.title}"></h3>
 					<p th:text="${loan.item.creator}"></p><p th:text="${loan.item.publicationYear}"></p>
@@ -86,7 +86,7 @@
         	   <div th:if="${buttonClicked == 'History'}">
         	   	<p th:if="${session.history == null}"> <br/> <br/> You have not yet checked out any items </p>
 				<div th:if="${session.history != null}" class="book" th:each="loan : ${session.history}"> 
-					<a class="profile" href="">
+					<a class="profile" th:href="@{'/itemProfile?itemID=' + ${loan.item.id}}">
   					<img th:alt="${loan.item.title}" th:src="${loan.item.imgSrc}"/>
 					<h3 th:text="${loan.item.title}"></h3>
 					<p th:text="${loan.item.creator}"></p>
