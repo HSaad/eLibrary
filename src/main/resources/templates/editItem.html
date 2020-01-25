@@ -42,6 +42,7 @@
 			<div> 
 				<form id="add-item" action="#" th:action="@{/editItem}" th:object="${item}" method="post">
 					<img height="150px" th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/>
+					<input th:field="*{id}" type="hidden" name="id" id="id"/>
 					
   					<input th:placeholder="' Title: ' +  ${item.title}" type="text" name="title" id="title" th:field="*{title}"/>
 					<textarea rows="4" cols="50" name="description" form="add-item" th:field="*{description}" th:placeholder="' Plot Description: ' +  ${item.description} + '(Max: 225 characters)'"></textarea>
