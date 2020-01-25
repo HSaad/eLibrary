@@ -279,7 +279,8 @@ public class IndexController {
 		
 		if("Edit".equals(button)) {
 			//go to edit item form
-			return "index";
+			model.addAttribute("item", item);
+			return "editItem";
 		}else if ("Delete".equals(button)) {
 			if(item.isAvailable()) {
 				//delete loans first
