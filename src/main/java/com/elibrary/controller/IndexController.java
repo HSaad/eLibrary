@@ -272,7 +272,7 @@ public class IndexController {
 		return "borrowerProfile";	
     }
     
-    @RequestMapping(value="/editItem", method=RequestMethod.GET)
+    @RequestMapping(value="/editItem", method=RequestMethod.POST)
     public String editItem(@ModelAttribute LibraryItem item) {	
 		LibraryItem foundItem = itemService.findByID(item.getId());
 		foundItem = item;
