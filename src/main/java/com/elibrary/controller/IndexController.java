@@ -277,6 +277,32 @@ public class IndexController {
     	//User user = (User) session.getAttribute("loggedInUser");
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
 		
-		return "borrowerProfile";	
+		if("Edit".equals(button)) {
+			//go to edit item form
+			return "index";
+		}else if ("Delete".equals(button)) {
+			if(item.isAvailable()) {
+				//delete loans first
+				List<Loan> loans = loanService.findByItem(item);
+				deleteLoans(loans);
+				
+				//delete item
+				itemService.delete(item);
+				return "index";
+			}else {
+				model.addAttribute("alertMsg", "Item is currently checked out and cannot be deleted at this time");
+				return "itemProfile";		
+			}
+
+		}
+		return "index";
     }
+	
+	public void deleteLoans(List<Loan> loans) {
+		if(loans != null) {
+			for (Loan l : loans) {
+				loanService.delete(l);
+			}
+		}	
+	}
 }

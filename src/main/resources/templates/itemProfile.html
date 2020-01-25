@@ -54,7 +54,7 @@
   			<div th:if="${session.loggedInUser != null}">
   				<div th:if="${session.loggedInUser.class.simpleName == 'Admin' ||
   						session.loggedInUser.class.simpleName == 'Librarian'}">
-  					<form class="librarian-functions" method="get" action="/admin-item">
+  					<form class="librarian-functions" method="get" action="/updateItem">
   						<input type="hidden" name="id" th:field="${item.id}"/>
 						<input type="submit" value="Edit" name="button"/>
     					<input type="submit" value="Delete" name="button" onclick="return confirm('Are you sure you want to delete?')"/>
