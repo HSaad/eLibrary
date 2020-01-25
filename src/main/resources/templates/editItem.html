@@ -40,11 +40,18 @@
 			<h2 th:text="'Edit ' + ${item.title}"></h2>
 			
 			<div> 
-				<form method="get" action="" id="add-item">
-					<img height="350px" th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/>
+				<form id="add-item" action="#" th:action="@{/}" th:object="${item}" method="post">
+					<img height="250px" th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/>
 			
-  					<input th:placeholder="' Title: ' +  ${item.title}" type="text" name="title" id="title" th:value="${item.title}"/>
+  					<input th:placeholder="' Title: ' +  ${item.title}" type="text" name="title" id="title" th:field="*{title}"/>
+					<textarea rows="4" cols="50" name="description" form="add-item" th:field="*{description}" th:placeholder="' Plot Description: ' +  ${item.description} + '(Max: 225 characters)'"></textarea>
 				
+					<input th:placeholder="' Genre: ' +  ${item.genre}" th:field="*{genre}" type="text" name="genre" id="genre"/>
+					
+					<input th:placeholder="' Author: ' +  ${item.creator}" th:field="*{creator}" type="text" name="author" id="author"/>
+					<input th:placeholder="' Publication Year: ' +  ${item.publicationYear}" th:field="*{publicationYear}" type="text" name="year" id="year"/>
+					<input th:placeholder="' Image Source: ' +  ${item.imgSrc}" th:field="*{imgSrc}" type="text" name="imgSrc" id="imgSrc"/>
+			
 						
     				<input class="signup" type="submit" value="Submit" name="button"/> 
   				</form>
