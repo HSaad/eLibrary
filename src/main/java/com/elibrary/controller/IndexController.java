@@ -282,8 +282,8 @@ public class IndexController {
 		foundItem.setCreator(item.getCreator());
 		foundItem.setPublicationYear(item.getPublicationYear());
 		foundItem.setImgSrc(item.getImgSrc());	
-		//foundItem = item;
-		//itemService.update(foundItem);
+		
+		itemService.update(foundItem);
 		return "result";	
     }
     
