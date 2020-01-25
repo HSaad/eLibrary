@@ -266,10 +266,16 @@ public class IndexController {
     	User user = (User) session.getAttribute("loggedInUser");
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
 		item.setAvailable(false);
-		//update item to false in db
-//		lidao.update(item);
 		Loan loan = new Loan(item, user, LocalDate.now(), null);
 		loanService.create(loan);
+		
+		return "borrowerProfile";	
+    }
+    
+    @RequestMapping(value="/updateItem", method=RequestMethod.GET)
+    public String editDeleteItem(HttpSession session, Model model, @RequestParam("id") String id, @RequestParam("button") String button) {	
+    	//User user = (User) session.getAttribute("loggedInUser");
+		LibraryItem item = itemService.findByID(Long.parseLong(id));
 		
 		return "borrowerProfile";	
     }

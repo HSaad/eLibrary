@@ -41,21 +41,22 @@
 				<p th:text="${item.class.simpleName + ' - ' + item.genre}"></p>
 				<p th:text="${item.description}"></p>
 			
-			<form th:if="${item.available and session.loggedInUser != null}" method="get" action="/borrow">
+			<div th:if="${item.available and session.loggedInUser != null}">
+			<form method="get" action="/borrow">
 				<input type="hidden" name="id" th:field="${item.id}"/>
     			<input type="submit" value="Borrow" name="button"/> 
   			</form>
-  			
-  			<form th:if="${!item.available}" method="get" action="">
+  			</div>
+  			<div th:if="${item.available != true}">
     			<br/> Sorry, this item is currently unavailable
-  			</form>
+  			</div>
   			
   			<div th:if="${session.loggedInUser != null}">
   				<div th:if="${session.loggedInUser.class.simpleName == 'Admin' ||
   						session.loggedInUser.class.simpleName == 'Librarian'}">
-  					<form class="librarian-functions" method="get" action="">
+  					<form class="librarian-functions" method="get" action="/admin-item">
+  						<input type="hidden" name="id" th:field="${item.id}"/>
 						<input type="submit" value="Edit" name="button"/>
-    					<!--  <input type="submit" value="Delete" name="button"> -->
     					<input type="submit" value="Delete" name="button" onclick="return confirm('Are you sure you want to delete?')"/>
   					</form>
   				</div>
