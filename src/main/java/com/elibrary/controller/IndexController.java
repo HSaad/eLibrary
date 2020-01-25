@@ -273,11 +273,12 @@ public class IndexController {
     }
     
     @RequestMapping(value="/editItem", method=RequestMethod.POST)
-    public String editItem(@ModelAttribute LibraryItem item) {	
+    public String editItem(Model model, @ModelAttribute LibraryItem item) {	
 		LibraryItem foundItem = itemService.findByID(item.getId());
-		foundItem = item;
-		itemService.update(foundItem);
-		return "index";	
+		model.addAttribute("item", foundItem);
+		//foundItem = item;
+		//itemService.update(foundItem);
+		return "result";	
     }
     
     
