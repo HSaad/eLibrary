@@ -265,7 +265,8 @@ public class IndexController {
     public String borrow(HttpSession session, Model model, @RequestParam("id") String id) {	
     	User user = (User) session.getAttribute("loggedInUser");
     	if (user == null) {
-    		logInUserForm(session, model);
+    		model.addAttribute("user", new User());
+    		return "signin";
     	}
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
 		item.setAvailable(false);
