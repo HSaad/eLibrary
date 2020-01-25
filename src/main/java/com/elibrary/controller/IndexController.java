@@ -272,6 +272,14 @@ public class IndexController {
 		return "borrowerProfile";	
     }
     
+    @RequestMapping(value="/editItem", method=RequestMethod.GET)
+    public String editItem(@ModelAttribute LibraryItem item) {	
+		LibraryItem foundItem = itemService.findByID(item.getId());
+		foundItem = item;
+		return "index";	
+    }
+    
+    
     @RequestMapping(value="/updateItem", method=RequestMethod.GET)
     public String editDeleteItem(HttpSession session, Model model, @RequestParam("id") String id, @RequestParam("button") String button) {	
     	//User user = (User) session.getAttribute("loggedInUser");

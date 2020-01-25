@@ -40,7 +40,7 @@
 			<h2 th:text="'Edit ' + ${item.title}"></h2>
 			
 			<div> 
-				<form id="add-item" action="#" th:action="@{/}" th:object="${item}" method="post">
+				<form id="add-item" action="#" th:action="@{/editItem}" th:object="${item}" method="post">
 					<img height="250px" th:alt="${item.title}" th:src="${item.imgSrc}"/> <br/>
 			
   					<input th:placeholder="' Title: ' +  ${item.title}" type="text" name="title" id="title" th:field="*{title}"/>
@@ -51,7 +51,6 @@
 					<input th:placeholder="' Author: ' +  ${item.creator}" th:field="*{creator}" type="text" name="author" id="author"/>
 					<input th:placeholder="' Publication Year: ' +  ${item.publicationYear}" th:field="*{publicationYear}" type="text" name="year" id="year"/>
 					<input th:placeholder="' Image Source: ' +  ${item.imgSrc}" th:field="*{imgSrc}" type="text" name="imgSrc" id="imgSrc"/>
-			
 						
     				<input class="signup" type="submit" value="Submit" name="button"/> 
   				</form>
