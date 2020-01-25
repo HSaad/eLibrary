@@ -35,11 +35,6 @@
 	
 		<!-- Item Edit section -->
 		<section>
-			
-			<% LibraryItem item = (LibraryItem)session.getAttribute("item");
-			User_JPA loggedInUser = (User_JPA)session.getAttribute("loggedInUser");
-			String userType = loggedInUser.getClass().getSimpleName();
-			%>
 			<br/>
 			
 			<h2 th:text="'Edit ' + ${item.title}"></h2>
