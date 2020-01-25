@@ -276,6 +276,12 @@ public class IndexController {
     public String editItem(Model model, @ModelAttribute LibraryItem item) {	
 		LibraryItem foundItem = itemService.findByID(item.getId());
 		model.addAttribute("item", foundItem);
+		foundItem.setTitle(item.getTitle());
+		foundItem.setDescription(item.getDescription());
+		foundItem.setGenre(item.getGenre());
+		foundItem.setCreator(item.getCreator());
+		foundItem.setPublicationYear(item.getPublicationYear());
+		foundItem.setImgSrc(item.getImgSrc());	
 		//foundItem = item;
 		//itemService.update(foundItem);
 		return "result";	
