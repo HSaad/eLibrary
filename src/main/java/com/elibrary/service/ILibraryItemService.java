@@ -20,4 +20,5 @@ public interface ILibraryItemService {
 	List<LibraryItem> findByType(Class type);
 	void deleteById(Long id);
 	void delete(LibraryItem item);
+	void update(LibraryItem item);
 }

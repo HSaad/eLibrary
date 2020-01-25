@@ -276,6 +276,7 @@ public class IndexController {
     public String editItem(@ModelAttribute LibraryItem item) {	
 		LibraryItem foundItem = itemService.findByID(item.getId());
 		foundItem = item;
+		itemService.update(foundItem);
 		return "index";	
     }
     

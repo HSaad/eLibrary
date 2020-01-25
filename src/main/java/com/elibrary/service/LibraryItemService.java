@@ -97,4 +97,9 @@ public class LibraryItemService implements ILibraryItemService{
 		repository.delete(item);
 	}
 
+	@Override
+	public void update(LibraryItem item) {
+		repository.save(item);
+	}
+
 }
