@@ -74,7 +74,7 @@
         	   <div th:if="${buttonClicked == 'Loans'}">
         	   	<p th:if="${session.loans == null}"> <br/> <br/> No loans currently out </p>
 				<div th:if="${session.loans != null}" class="book" th:each="loan : ${session.loans}"> 
-					<a class="profile" th:href="@{'/itemProfile?itemID=' + ${loan.item.id}}"">
+					<a class="profile" th:href="@{'/itemProfile?itemID=' + ${loan.item.id}}">
   					<img th:alt="${loan.item.title}" th:src="${loan.item.imgSrc}"/>
 					<h3 th:text="${loan.item.title}"></h3>
 					<p th:text="${loan.item.creator}"></p><p th:text="${loan.item.publicationYear}"></p>
