@@ -276,6 +276,18 @@ public class IndexController {
 		return "borrowerProfile";	
     }
     
+    @RequestMapping(value="/loan", method=RequestMethod.GET)
+    public String loan(HttpSession session, Model model, @RequestParam("itemID") String id) {	
+    	
+		LibraryItem item = itemService.findByID(Long.parseLong(id));
+		model.addAttribute("item", item);
+		//item.setAvailable(false);
+		//Loan loan = new Loan(item, user, LocalDate.now(), null);
+		//loanService.create(loan);
+		
+		return "result";	
+    }
+    
     @RequestMapping(value="/editItem", method=RequestMethod.POST)
     public String editItem(Model model, @ModelAttribute LibraryItem item) {	
 		LibraryItem foundItem = itemService.findByID(item.getId());

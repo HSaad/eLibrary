@@ -79,6 +79,11 @@
 					<h3 th:text="${loan.item.title}"></h3>
 					<p th:text="${loan.item.creator}"></p><p th:text="${loan.item.publicationYear}"></p>
 					<p th:text="'Due Date: ' + ${loan.borrowedDate}"></p>
+					<form method="get" th:action="@{/loan}">
+						<input type="hidden" name="itemID" th:value="${loan.item.id}"/>
+    					<input type="submit" value="Renew" name="button"> 
+          				<input type="submit" value="Return" name="button"> 
+  					</form>
 					</a>
 				</div>
         	   </div>
