@@ -36,8 +36,6 @@ import com.elibrary.service.ILibraryItemService;
 import com.elibrary.service.ILoanService;
 import com.elibrary.service.IUserService;
 
-import main.java.model.User_JPA;
-
 @Controller
 public class IndexController {
 	
