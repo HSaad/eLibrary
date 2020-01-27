@@ -84,4 +84,9 @@ public class UserService implements IUserService{
 	public void delete(User user) {
 		repository.delete(user);
 	}
+
+	@Override
+	public void update(User user) {
+		repository.save(user);
+	}
 }

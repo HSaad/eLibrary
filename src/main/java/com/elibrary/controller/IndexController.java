@@ -36,6 +36,8 @@ import com.elibrary.service.ILibraryItemService;
 import com.elibrary.service.ILoanService;
 import com.elibrary.service.IUserService;
 
+import main.java.model.User_JPA;
+
 @Controller
 public class IndexController {
 	
@@ -277,15 +279,31 @@ public class IndexController {
     }
     
     @RequestMapping(value="/loan", method=RequestMethod.GET)
-    public String loan(HttpSession session, Model model, @RequestParam("itemID") String id) {	
+    public String loan(HttpSession session, Model model, @RequestParam("itemID") String id, @RequestParam("button") String button) {	
     	
 		LibraryItem item = itemService.findByID(Long.parseLong(id));
-		model.addAttribute("item", item);
-		//item.setAvailable(false);
-		//Loan loan = new Loan(item, user, LocalDate.now(), null);
-		//loanService.create(loan);
+		User user = (User) session.getAttribute("loggedInUser");
+		Loan loan = loanService.findByUserAndItem(user, item);
 		
-		return "result";	
+				
+		if ("Renew".equals(button)) { 
+			loan.setBorrowedDate(LocalDate.now());
+			loanService.update(loan);
+			
+			return "borrowerProfile";
+		}else if ("Return".equals(button)) {
+			//update item and set item to available
+			item.setAvailable(true);
+			itemService.update(item);
+			
+			//set the return date to current date and update loan
+			loan.setReturnedDate(LocalDate.now());
+			loanService.update(loan);
+			
+			return "borrowerProfile";	
+		}
+		
+		return "index";	
     }
     
     @RequestMapping(value="/editItem", method=RequestMethod.POST)

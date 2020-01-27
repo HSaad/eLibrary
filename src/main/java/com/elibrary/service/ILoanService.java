@@ -17,4 +17,5 @@ public interface ILoanService {
 	Loan create(Loan loan);	
 	void deleteById(Long id);
 	void delete(Loan loan);
+	void update(Loan loan);
 }

@@ -73,4 +73,9 @@ public class LoanService implements ILoanService{
 	public void delete(Loan loan) {
 		repository.delete(loan);	
 	}
+
+	@Override
+	public void update(Loan loan) {
+		repository.save(loan);
+	}
 }
