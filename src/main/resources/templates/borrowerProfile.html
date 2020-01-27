@@ -78,7 +78,7 @@
   					<img th:alt="${loan.item.title}" th:src="${loan.item.imgSrc}"/>
 					<h3 th:text="${loan.item.title}"></h3>
 					<p th:text="${loan.item.creator}"></p><p th:text="${loan.item.publicationYear}"></p>
-					<p th:text="'Due Date: ' + ${loan.borrowedDate}"></p>
+					<p th:text="'Due Date: ' + ${{loan.borrowedDate.plusDays(14)}}"></p>
 					<form method="get" th:action="@{/loan}">
 						<input type="hidden" name="itemID" th:value="${loan.item.id}"/>
     					<input type="submit" value="Renew" name="button"/> 
