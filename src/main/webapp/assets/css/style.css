@@ -112,7 +112,7 @@ section {
 
 .landing {
 	margin: 0;
-	background-image: url(assets/images/landing-page.jpg); /* change image later*/
+	background-image: url(../assets/images/landing-page.jpg); /* change image later*/
 	
 	background-position:center;
 	background-repeat: no-repeat;
