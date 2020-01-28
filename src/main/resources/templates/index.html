@@ -3,15 +3,14 @@
   <head>
 	<title>Digital Library: Borrow eBooks, audiobooks and videos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="../assets/css/bootstrap.css" th:href="@{/assets/css/bootstrap.css}" />
-    <link rel="stylesheet" href="../assets/css/thymeleaf-demo.css" th:href="@{/assets/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
   </head>
   <body>
   	<div id="page-container">
 	<!-- Navigation: Logo, Search Bar, Sign In/Out -->
 		<header>
 			<nav>
-				<a class="logo" href="/index"> <img width="30px" height="30px" alt="Digital Library Logo" th:src="@{/assets/css/images/logo.png}"/> </a> 
+				<a class="logo" href="/index"> <img width="40px" alt="Digital Library Logo" th:src="@{/assets/css/images/logo.png}"/> </a> 
 				
 				<!-- Search icon in css -->
 				<form method="get" action="/searched">
