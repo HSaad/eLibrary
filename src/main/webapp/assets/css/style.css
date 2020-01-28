@@ -20,6 +20,10 @@ nav {
 	border-bottom: 1px #D9D9D9 solid;
 }
 
+nav div {
+	display: inline;
+}
+
 #search {
 	margin-left: 150px;
 	padding-left: 15px;
@@ -521,7 +525,6 @@ a.delete-edit:hover {
 #page-container {
 	position:relative;
 	min-height: 100vh;
-	margin-bottom: 30px;
 }
 
 #footer {
