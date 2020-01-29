@@ -47,11 +47,6 @@ public class IndexController {
 	
 	@Autowired
 	private ILoanService loanService;
-	
-    @RequestMapping("/")
-    public String home(Model model) {
-        return "home";
-    }
     
     @RequestMapping("/contact")
     public String contact(Model model) {
@@ -93,7 +88,7 @@ public class IndexController {
         return "browse";
     }
     
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String index(HttpSession session, Model model) {
 
 		ArrayList<LibraryItem> libraryCatalogue = (ArrayList<LibraryItem>) itemService.findAll();
@@ -107,14 +102,6 @@ public class IndexController {
 		
         return "index";
     }
-    
-    @RequestMapping("/users")
-    public String findAllOrderedByNameDescending(Model model) {
-    	List<User> users = (List<User>) userService.findAllLibrarians();
-    	model.addAttribute("users", users);
-    	return "user";
-    }
-    
 
     @RequestMapping("/signup")
     public String createUserForm(HttpSession session, Model model) {
@@ -173,12 +160,6 @@ public class IndexController {
 		}
     }
     
-    @RequestMapping("/createitemform")
-    public String createItemForm(Model model) {
-        model.addAttribute("item", new LibraryItem());
-        return "createitem";
-    }
-
     @RequestMapping(value="/createuser", method=RequestMethod.POST)
     public String createUser(@ModelAttribute User user, Model model) {
         userService.create(user);
@@ -223,20 +204,6 @@ public class IndexController {
     	}
     	
         return "profile";
-    }
-
-    @RequestMapping("/items")
-    public String findAllItems(Model model) {
-    	List<LibraryItem> items = (List<LibraryItem>) itemService.findAll();
-    	model.addAttribute("items", items);
-    	return "item";
-    }
-    
-    @RequestMapping("/loans")
-    public String findAllLoans(Model model) {
-    	List<Loan> loans = (List<Loan>) loanService.findAll();
-    	model.addAttribute("loans", loans);
-    	return "loan";
     }
     
     @RequestMapping(value="/searched", method=RequestMethod.GET)
